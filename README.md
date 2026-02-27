@@ -25,6 +25,9 @@ Admin-only staff management
 Getting Started
     
 git clone https://github.com/Sarvan-Singh7/Dispensary-Management-MERN.git
-cd Dispensary-Management-MERN
-npm install
-npm run dev
+
+                         # cd Dispensary-Management-MERN
+                         
+                         # npm install
+                         
+                         # npm run dev
