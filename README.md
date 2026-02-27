@@ -1,16 +1,98 @@
-# React + Vite
+🏥 College Dispensary Management System
+A full-stack web application built with the MERN Stack to digitize and streamline college dispensary operations. The system supports three role-based portals — Admin, Staff, and Student — each with dedicated functionality for managing medicines, student health records, and dispensary resources.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚧 Status: In Progress — Frontend UI complete. Backend integration ongoing.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📸 Overview
+The College Dispensary Management System allows college dispensaries to:
 
-## React Compiler
+Manage medicine inventory with real-time stock tracking
+Register students and maintain their health records
+Control staff access with role-based authentication
+Allow students to view their own medicine history
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+✨ Features
+🔐 Authentication & Security
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Secure login with JWT (JSON Web Tokens)
+Password encryption for all users
+OTP-based password reset via NodeMailer
+Role-based access control (Admin / Staff / Student)
+
+🛡️ Admin Portal
+
+Add, edit, and delete staff members
+Staff credentials automatically sent to registered email
+Full control over all dispensary data
+View and filter student records by month and year
+
+👨‍⚕️ Staff Portal
+
+Register new students into the system
+Search students by roll number
+Record medicine dispensed to students
+Manage medicine inventory (Add / Edit / Delete)
+Manage facilities, nearby hospitals, events, and gallery
+
+🎓 Student Portal
+
+View personal medicine history
+Self-registration with email and roll number
+OTP-based forgot password support
+
+📦 Medicine & Stock Management
+
+Real-time stock quantity tracking
+Stock auto-decrements when medicine is dispensed
+Prevents dispensing more than available quantity
+Search medicines by name
+
+📋 Records & History
+
+Filter student records by month and year
+View per-student medicine history grouped by date
+Search records by roll number
+
+
+🛠️ Tech Stack
+LayerTechnologyFrontendReact.js, CSSBackendNode.js, Express.jsDatabaseMongoDB (Mongoose)AuthenticationJWT, BcryptEmail ServiceNodeMailerImage StorageCloudinaryBuild ToolVite
+
+📁 Project Structure
+Dispensary-Management-MERN/
+├── public/
+├── src/
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Page-level components
+│   ├── assets/           # Images and static files
+│   └── App.jsx           # Main app with routing
+├── index.html
+├── package.json
+└── vite.config.js
+
+🚀 Getting Started
+Prerequisites
+
+Node.js installed
+MongoDB (local or Atlas)
+Git
+
+Installation
+bash# Clone the repository
+git clone https://github.com/Sarvan-Singh7/Dispensary-Management-MERN.git
+
+# Navigate to project directory
+cd Dispensary-Management-MERN
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
+Backend setup instructions will be added once backend integration is complete.
+
+
+👤 Portals & Access
+RoleAccessAdminFull access including staff managementStaffAll features except managing other staffStudentView personal medicine history only
