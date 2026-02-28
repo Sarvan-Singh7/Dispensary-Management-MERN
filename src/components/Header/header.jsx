@@ -2,8 +2,9 @@ import React from 'react'
 import './header.css'
 import { useState, useEffect } from 'react'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import {Link, useLocation } from 'react-router-dom';
 const Header = () => {
-
+const location= useLocation()
   const [eventpopup, setEventpopup] = useState(false);
   const [helpline, setHelpline] = useState(false);
 
@@ -47,15 +48,15 @@ const Header = () => {
       </div>
 
       <div className='navbar'>
-        <div className='navbar-links'>
+        <Link to={'/'} className={`navbar-links ${location.pathname==='/'?'active-link':null}`}>
           Home
-        </div>
-        <div className='navbar-links'>
+        </Link>
+        <Link  to={'/login'} className={`navbar-links ${location.pathname==='/login'?'active-link':null}`}>
           Login
-        </div>
-        <div className='navbar-links'>
+        </Link>
+        <Link to={'/stock'} className={`navbar-links ${location.pathname==='/stock'?'active-link':null}`}>
           Stock View
-        </div>
+        </Link>
         <div className='navbar-links event-link' onMouseEnter={() => handleOpenPopup("event")} onMouseLeave={() => handleClosePopup("event")}>
           <div className='navbar-link-opt'>New Events <ArrowDropDownIcon /></div>
           {
@@ -82,9 +83,11 @@ const Header = () => {
 
       </div>
 
-      <div className='header-banner'>
+   {
+    location.pathname==='/' &&    <div className='header-banner'>
         <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV0JtwxcjNmUy0HNfNwUA4bbdNgAExlepqgG2yDgpKR2emOMi79JnaSHAFMHp5FAWbhrA&usqp=CAU"} className='header-banner-image' />
       </div>
+   }
 
     </div>
   )
