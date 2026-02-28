@@ -6,7 +6,7 @@ import Header from './components/Header/header'
 import Footer from './components/Footer/footer'
 import Login from './pages/login/login'
 import Stock from './pages/stock/stock'
-import AdminDashboard from './pages/Admin/adminDashboard'
+import AdminDashboard from './pages/Admin/Dashboard/adminDashboard'
 function App() {
   const [count, setCount] = useState(0)
 
