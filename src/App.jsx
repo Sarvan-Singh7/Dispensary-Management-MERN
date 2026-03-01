@@ -7,6 +7,7 @@ import Footer from './components/Footer/footer'
 import Login from './pages/login/login'
 import Stock from './pages/stock/stock'
 import AdminDashboard from './pages/Admin/Dashboard/adminDashboard'
+import RegisterStudent from './pages/Admin/RegisterStudent/registerStudent'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,6 +19,7 @@ function App() {
         <Route path = '/login' element = {<Login/>}/>
          <Route path = '/stock' element = {<Stock/>}/>
           <Route path = '/admin/dashboard' element = {<AdminDashboard/>}/>
+            <Route path = '/admin/register-student' element = {<RegisterStudent/>}/>
       </Routes>
       <Footer/>
     </div>
