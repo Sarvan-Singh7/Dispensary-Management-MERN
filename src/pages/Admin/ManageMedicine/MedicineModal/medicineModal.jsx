@@ -1,7 +1,7 @@
 import React from 'react'
 import './medicineModal.css';
 
-export const MedicineModal = () => {
+ const MedicineModal = () => {
     const handleSubmit=(e)=>{
         e.preventDefault()
     }

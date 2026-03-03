@@ -41,7 +41,7 @@ export const Record = () => {
 
   useEffect(() => {
     let arr = [];
-    for (let i = 2026; i < parseInt(currentYear); i++) {
+    for (let i = 2026; i <= parseInt(currentYear); i++) {
       arr.unshift(i.toString());
     }
     setListOYear(arr);

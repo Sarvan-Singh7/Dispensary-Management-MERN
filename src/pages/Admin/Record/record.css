@@ -10,13 +10,13 @@
     gap: 20px;
 }
 
-.record-year{
+.record-date-year{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.record-date-year{
+.record-year{
     padding: 15px;
     border-radius: 10px;
     border: 1px solid;
