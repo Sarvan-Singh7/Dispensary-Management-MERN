@@ -28,12 +28,12 @@ else{
         <Link to={'/admin/register-student'} className="admin-dashboard-card">
           Register Student
         </Link>
-         <div className="admin-dashboard-card">
+         <Link to={'/admin/manage-medicine'}className="admin-dashboard-card">
           Mange Medicines
-        </div>
-         <div className="admin-dashboard-card">
+        </Link>
+         <Link to={'/admin/record'}className="admin-dashboard-card">
           Records 
-        </div>
+        </Link>
          <div className="admin-dashboard-card">
           Facilites
         </div>

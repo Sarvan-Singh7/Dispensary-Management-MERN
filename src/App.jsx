@@ -8,6 +8,8 @@ import Login from './pages/login/login'
 import Stock from './pages/stock/stock'
 import AdminDashboard from './pages/Admin/Dashboard/adminDashboard'
 import RegisterStudent from './pages/Admin/RegisterStudent/registerStudent'
+import ManageMedicine from './pages/Admin/ManageMedicine/manageMedicine'
+import Record from './pages/Admin/Record/record'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -20,6 +22,9 @@ function App() {
          <Route path = '/stock' element = {<Stock/>}/>
           <Route path = '/admin/dashboard' element = {<AdminDashboard/>}/>
             <Route path = '/admin/register-student' element = {<RegisterStudent/>}/>
+            <Route path = '/admin/manage-medicine' element = {<ManageMedicine/>}/>
+            <Route path = '/admin/record' element = {<Record/>}/>
+
       </Routes>
       <Footer/>
     </div>
