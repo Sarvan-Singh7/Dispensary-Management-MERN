@@ -10,6 +10,7 @@ import AdminDashboard from './pages/Admin/Dashboard/adminDashboard'
 import RegisterStudent from './pages/Admin/RegisterStudent/registerStudent'
 import ManageMedicine from './pages/Admin/ManageMedicine/manageMedicine'
 import Record from './pages/Admin/Record/record'
+import Facility from './pages/Admin/Facility/facility'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -24,6 +25,7 @@ function App() {
             <Route path = '/admin/register-student' element = {<RegisterStudent/>}/>
             <Route path = '/admin/manage-medicine' element = {<ManageMedicine/>}/>
             <Route path = '/admin/record' element = {<Record/>}/>
+            <Route path = '/admin/facility' element = {<Facility/>}/>
 
       </Routes>
       <Footer/>
