@@ -3,7 +3,6 @@ A full-stack MERN application to manage college dispensary operations with role-
 
 🚧 Status: In Progress — Frontend UI complete, backend integration ongoing.
 
-
 Tech Stack
 
 Frontend: React.js, CSS, Vite
@@ -11,7 +10,6 @@ Backend: Node.js, Express.js
 Database: MongoDB (Mongoose)
 Auth: JWT, Bcrypt, NodeMailer (OTP)
 Storage: Cloudinary
-
 
 Features
 
@@ -21,13 +19,15 @@ Student registration and health record management
 OTP-based password reset via email
 Admin-only staff management
 
-
 Getting Started
-    
+
 git clone https://github.com/Sarvan-Singh7/Dispensary-Management-MERN.git
 
                          # cd Dispensary-Management-MERN
-                         
+
                          # npm install
-                         
+
                          # npm run dev
+
+
+                         <!-- hello -->
