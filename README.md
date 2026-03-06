@@ -28,6 +28,4 @@ git clone https://github.com/Sarvan-Singh7/Dispensary-Management-MERN.git
                          # npm install
 
                          # npm run dev
-
-
-
+                         
