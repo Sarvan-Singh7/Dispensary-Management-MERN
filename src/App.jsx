@@ -13,6 +13,7 @@ import Record from './pages/Admin/Record/record'
 import Facility from './pages/Admin/Facility/facility'
 import NearByHospital from './pages/Admin/NearByHospital/nearByHospital'
 import AdminGallary from './pages/Admin/Gallary/adminGallary'
+import StudentDashboard from './pages/Student/studentDashboard'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -30,6 +31,8 @@ function App() {
             <Route path = '/admin/facility' element = {<Facility/>}/>
             <Route path = '/admin/nearByHospital' element = {<NearByHospital/>}/>
             <Route path = '/admin/gallary' element = {<AdminGallary/>}/>
+
+            <Route path='/student/:id' element={<StudentDashboard/>}></Route>
       </Routes>
       <Footer/>
     </div>
