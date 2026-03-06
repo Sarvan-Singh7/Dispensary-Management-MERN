@@ -37,12 +37,12 @@ else{
          <Link to={'/admin/facility'} className="admin-dashboard-card">
           Facilites
         </Link>
-            <div className="admin-dashboard-card">
+            <Link to={'/admin/nearByHospital'} className="admin-dashboard-card">
           Near By Hospitals
-        </div>
-         <div className="admin-dashboard-card">
-          Galary
-        </div>
+        </Link>
+         <Link to={'/admin/gallary'} className="admin-dashboard-card">
+          Gallary
+        </Link>
       </div>
    {manageStaffModal &&  <Modal value={"Staff"} handleClose={openCloseModal} header={"Manage Staffs"} children={<ManageStaff/>} />}
    {eventModal &&  <Modal value={"event"} handleClose={openCloseModal} header={"Manage Events"} children={<ManageEvent/>} />}

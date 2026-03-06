@@ -11,6 +11,8 @@ import RegisterStudent from './pages/Admin/RegisterStudent/registerStudent'
 import ManageMedicine from './pages/Admin/ManageMedicine/manageMedicine'
 import Record from './pages/Admin/Record/record'
 import Facility from './pages/Admin/Facility/facility'
+import NearByHospital from './pages/Admin/NearByHospital/nearByHospital'
+import AdminGallary from './pages/Admin/Gallary/adminGallary'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -26,7 +28,8 @@ function App() {
             <Route path = '/admin/manage-medicine' element = {<ManageMedicine/>}/>
             <Route path = '/admin/record' element = {<Record/>}/>
             <Route path = '/admin/facility' element = {<Facility/>}/>
-
+            <Route path = '/admin/nearByHospital' element = {<NearByHospital/>}/>
+            <Route path = '/admin/gallary' element = {<AdminGallary/>}/>
       </Routes>
       <Footer/>
     </div>
