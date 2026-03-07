@@ -65,7 +65,7 @@ export const Record = () => {
     <div className='records'>
       <div className="go-back"><Link to={'/admin/dashboard'}><ArrowBackIcon /> Back to Dashboard</Link></div>
 
-      <SearchBox value={studentRoll} onChange={onChangeField} placeholder="Search By Roll Number" />
+      <SearchBox value={studentRoll} onChange={onChangeField} placeholder="Search By Roll No." />
 
       <div className='record-div-block'>Select Year
         <div className='record-date-year'>
@@ -121,7 +121,7 @@ export const Record = () => {
         </div>
 
       </div>
-      {modal && <Modal header="Records" handleClose={onOffModal} childeren={<RecordModal/>}/>
+      {modal && <Modal header="Records" handleClose={onOffModal} children={<RecordModal/>}/>
     }
           </div>
   )

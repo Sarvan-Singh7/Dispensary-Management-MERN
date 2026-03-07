@@ -1,6 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './facilitymodal.css'
 const FacilityModal = () => {
+    const [inputField,setInputField]=useState({title:"",description:""})
+    const handleOnChange=(event,key)=>{
+        setInputField({...inputField,[key]:event.target.value})
+    }
     const handleSubmit=(e)=>{
         e.preventDefault()
     }
@@ -9,10 +13,10 @@ const FacilityModal = () => {
       <form className="register-form" onSubmit={handleSubmit}>
                 <div className="">
                     <div className="register-input-box">
-                        <input type="text" className="input-box-register" placeholder='Enter Title' />    
+                        <input value={inputField.title} onChange={(event)=>{handleOnChange(event,'title')}} type="text" className="input-box-register" placeholder='Enter Title' />    
                     </div>
                     <div className="register-input-box"style={{marginTop:20}}>
-                        <textarea cols={450} rows={10} type='text' className='input-box-register' placeholder='Add Description'></textarea>    
+                        <textarea value={inputField.description} onChange={(event)=>{handleOnChange(event,'description')}} cols={450} rows={10} type='text' className='input-box-register' placeholder='Add Description'></textarea>    
                     </div>              
                 </div>
 

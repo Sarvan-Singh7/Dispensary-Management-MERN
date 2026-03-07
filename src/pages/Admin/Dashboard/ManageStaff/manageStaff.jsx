@@ -1,26 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './manageStaff.css'
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 const ManageStaff = () => {
+    const [inputField,setInputField]=useState({name:"",email:"",password:"",designation:"",mobileNo:""})
+    const handleOnChange=(event,key)=>{
+        setInputField({...inputField,[key]:event.target.value})
+    }
+    
   return (
     <div className='add-staffs-box'>
       <form className='register-form'>
         <div className="register-form-div">
             <div className="register-input-box">
-                <input type="text" className="input-box-register" placeholder='Staff Name' />
+                <input value={inputField.name} onChange={(event)=>{handleOnChange(event,'name')}} type="text" className="input-box-register" placeholder='Staff Name' />
             </div>
            <div className="register-input-box">
-                <input type="text" className="input-box-register" placeholder='Email id' />
+                <input value={inputField.email} onChange={(event)=>{handleOnChange(event,'email')}} type="text" className="input-box-register" placeholder='Email id' />
             </div>
             <div className="register-input-box">
-                <input type="text" className="input-box-register" placeholder='password' />
+                <input value={inputField.password} onChange={(event)=>{handleOnChange(event,'password')}} type="text" className="input-box-register" placeholder='password' />
             </div>
            <div className="register-input-box">
-                <input type="text" className="input-box-register" placeholder='designation' />
+                <input value={inputField.designation} onChange={(event)=>{handleOnChange(event,'designation')}} type="text" className="input-box-register" placeholder='designation' />
             </div>
             <div className="register-input-box">
-                <input type="text" className="input-box-register" placeholder='Mobile No' />
+                <input value={inputField.mobileNo} onChange={(event)=>{handleOnChange(event,'mobileNo')}} type="text" className="input-box-register" placeholder='Mobile No' />
             </div>
 
         </div>
