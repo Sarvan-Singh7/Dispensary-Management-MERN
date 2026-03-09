@@ -21,6 +21,13 @@ Admin-only staff management
 
 Getting Started
 
+/////////////////////////
+packages added
+1. axios 
+
+
+///////npm i//// tp get the package
+
 git clone https://github.com/Sarvan-Singh7/Dispensary-Management-MERN.git
 
                          # cd Dispensary-Management-MERN
