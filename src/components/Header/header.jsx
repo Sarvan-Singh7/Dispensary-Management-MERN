@@ -62,10 +62,10 @@ const location= useLocation() //hook to get current location
           {
             eventpopup && (<div className='navbar-dropdown-popup event-pop'>
               <div className='popup-notification'> Diwali Celebration</div>
-              <div className='popup-notification'> Sarvan Singh</div>
-              <div className='popup-notification'> Upander Garg</div>
-              <div className='popup-notification'> Deepanshu Goyal</div>
-              <div className='popup-notification'> Simar Singh Bonsra</div>
+              <div className='popup-notification'> Holi</div>
+              <div className='popup-notification'> Independence Day</div>
+              <div className='popup-notification'> Republic Day</div>
+              <div className='popup-notification'> Eid al-Adha</div>
             </div>)
           }
 

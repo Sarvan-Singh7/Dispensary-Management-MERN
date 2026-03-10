@@ -18,23 +18,23 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className = 'App'>
-      <Header/>
+    <div className='App'>
+      <Header />
       <Routes>
-        <Route path = '/' element = {<Home/>}/>
-        <Route path = '/login' element = {<Login/>}/>
-         <Route path = '/stock' element = {<Stock/>}/>
-          <Route path = '/admin/dashboard' element = {<AdminDashboard/>}/>
-            <Route path = '/admin/register-student' element = {<RegisterStudent/>}/>
-            <Route path = '/admin/manage-medicine' element = {<ManageMedicine/>}/>
-            <Route path = '/admin/record' element = {<Record/>}/>
-            <Route path = '/admin/facility' element = {<Facility/>}/>
-            <Route path = '/admin/nearByHospital' element = {<NearByHospital/>}/>
-            <Route path = '/admin/gallary' element = {<AdminGallary/>}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/stock' element={<Stock />} />
+        <Route path='/admin/dashboard' element={<AdminDashboard />} />
+        <Route path='/admin/register-student' element={<RegisterStudent />} />
+        <Route path='/admin/manage-medicine' element={<ManageMedicine />} />
+        <Route path='/admin/record' element={<Record />} />
+        <Route path='/admin/facility' element={<Facility />} />
+        <Route path='/admin/nearByHospital' element={<NearByHospital />} />
+        <Route path='/admin/gallary' element={<AdminGallary />} />
 
-            <Route path='/student/:id' element={<StudentDashboard/>}></Route>
+        <Route path='/student/:id' element={<StudentDashboard />}></Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

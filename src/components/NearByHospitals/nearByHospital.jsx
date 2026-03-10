@@ -6,8 +6,8 @@ const NearByHospital = () => {
   const rowData = [
     {
       SNo : "1",
-      name : "Danish",
-      address : "123 Main Street",
+      name : "Neelam Hospital",
+      address : "Near Chitkara University, Village Jhansla,Punjab",
       contact : "1234567890"
     }
   ]
