@@ -24,7 +24,8 @@ const AdminDashboard = () => {
           <div className="manage-staff-btn" onClick={() => { openCloseModal("event") }}>Events</div>
         </div>
       </div>
-      <div className="admin-dashboard-cards">
+      <div className="admin-dashboard-cards">  
+        {/* link used so url change on Clicking on this card */}
         <Link to={'/admin/register-student'} className="admin-dashboard-card">
           Register Student
         </Link>
