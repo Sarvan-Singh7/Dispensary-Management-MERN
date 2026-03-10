@@ -5,7 +5,8 @@
     padding: 100px 160px;
     box-sizing: border-box;
     gap: 100px;
-    background: url("https://res.cloudinary.com/mashhuudanny/image/upload/v1739627781/loginLogo_vxibhy.jpg");
+    background: url("https://res.cloudinary.com/mashhuudanny/image/upload/v1739627781/loginLogo_vxibhy.jpg"); 
+    /* backgroung image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -1,4 +1,4 @@
-//upiiiiiiiiiiiiiiiiiiiigit a
+
 import React from 'react'
 import './footer.css'
 

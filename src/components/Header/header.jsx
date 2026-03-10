@@ -2,9 +2,9 @@ import React from 'react'
 import './header.css'
 import { useState, useEffect } from 'react'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import {Link, useLocation } from 'react-router-dom';
+import {Link, useLocation } from 'react-router-dom';//link tag used to navigate betweeen different pages and also change URL
 const Header = () => {
-const location= useLocation()
+const location= useLocation() //hook to get current location
   const [eventpopup, setEventpopup] = useState(false);
   const [helpline, setHelpline] = useState(false);
 
@@ -94,3 +94,6 @@ const location= useLocation()
 }
 
 export default Header
+
+
+
