@@ -26,13 +26,13 @@ const Header = () => {
   return (
     <div className='header'>
       <div className='header-college-details'>
-        <div className='header-college-details-left'>
+        <div className='header-college-details-left' onClick={() => window.location.reload()} style={{cursor : "pointer"}}>
           <img className='header-college-details-left-logo' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUIP-NCWROmZ9KZX2cuZNYUZZL1GlvG6cPc3UDIa2k9g&s' alt='colegeLogo' />
           <div>
             <div className='header-college-details-name'>ਚਿਤਕਾਰਾ ਯੂਨੀਵਰਸਿਟੀ,</div>
-            <div className='header-college-details-place'>ਪੰਜਾਬ</div>
+            <div className='header-college-details-place'>ਮੇਡੀਕੋ</div>
             <div className='header-college-details-name'>Chitkara University,</div>
-            <div className='header-college-details-place'>Punjab</div>
+            <div className='header-college-details-place'>Medico</div>
           </div>
         </div>
         <div className='header-college-details-right'>

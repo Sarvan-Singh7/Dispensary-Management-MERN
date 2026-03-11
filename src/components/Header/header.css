@@ -123,3 +123,18 @@
     background-color: #2c98dc;
     
 }
+.logo-container{
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.header-college-details-name{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header-college-details-place{
+    font-size: 16px;
+    color: #555;
+}
