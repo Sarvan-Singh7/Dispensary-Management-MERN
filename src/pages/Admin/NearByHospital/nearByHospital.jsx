@@ -7,12 +7,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Modal from '../../../components/Modal/modal';
 import NearByModal from './NearByModal/nearByModal';
-const  NearByHospital = () => {
-    const [model,setModal]=useState(false);
-    
-    const onOFModal=()=>{
-        setModal(prev=>!prev);
-    }
+const NearByHospital = () => {
+  const [model, setModal] = useState(false);
+
+  const onOFModal = () => {
+    setModal(prev => !prev);
+  }
   return (
     <div className='admin-facility'>
       <div className="go-back"><Link to={'/admin/dashboard'}><ArrowBackIcon /> Back to Dashboard</Link></div>
@@ -25,22 +25,22 @@ const  NearByHospital = () => {
       <div className='admin-facility-rows'>
         <div className='admin-facility-row'>
 
-            <div className='admin-facility-left'>
-                <div className='admin-facility-title'>Neelam Hospital</div>
-                <div>Address :Newar Chitkara University, Punjab</div>
-                <div>+9885467684</div>
-                <div style={{marginTop:"10px"}}>Added By :Deepanshu</div>
-            </div>
+          <div className='admin-facility-left'>
+            <div className='admin-facility-title'>Name : Neelam Hospital</div>
+            <div>Adress : Near Chitkara University, Village Jhansla,Punjab</div>
+            <div>Contact Number : 1234567890</div>
+            <div style={{ marginTop: "10px" }}>Added By :Deepanshu</div>
+          </div>
 
-            <div className='admin-facility-btns'>
-                <div><EditIcon /></div>
-                <div><DeleteIcon /></div>
-            </div>
+          <div className='admin-facility-btns'>
+            <div><EditIcon /></div>
+            <div><DeleteIcon /></div>
+          </div>
 
         </div>
       </div>
-           
-      {model &&<Modal headers="Add Facility" handleClose={onOFModal} children={<NearByModal/>}/>}
+
+      {model && <Modal headers="Add Facility" handleClose={onOFModal} children={<NearByModal />} />}
     </div>
   )
 }

@@ -15,4 +15,4 @@ const DeleteModal = (props) => {
   )
 }
 
-export default DeleteModal
+export default DeleteModal;

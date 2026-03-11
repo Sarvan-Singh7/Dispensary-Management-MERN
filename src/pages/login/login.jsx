@@ -4,12 +4,12 @@ import './login.css'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
-    const [loginField, setLoginField] = useState({ email: "", password: "" });
+    const [loginField, setLoginField] = useState({ email: "", password: "" }); //initializes with empty fields
     const [registerField, setRegisterField] = useState({ name: "", email: "", password: "", roll: "" });
     const handleOnChange = (event, key, card) => {
-        if (card === "login") {
+        if (card === "login") {  //used to update state on login
             setLoginField({ ...loginField, [key]: event.target.value })
-        } else {
+        } else {      ///used to update state on register
             setRegisterField({ ...registerField, [key]: event.target.value })
         }
     }
@@ -20,6 +20,7 @@ const Login = () => {
 
                 <div className="card-header-form">Login </div>
                 <div className="form-input-fields">
+                    {/* ///see key pass as email, passwordd etc */}
                     <input value={loginField.email} onChange={(event) => { handleOnChange(event, 'email', 'login') }} type="email" className="form-input" placeholder='Enter Email id' />
                     <input value={loginField.password} onChange={(event) => { handleOnChange(event, 'password', 'login') }} type="password" className="form-input" placeholder='Your Password' />
                     <div className="form-btn">Login</div>
