@@ -22,12 +22,12 @@ const Footer = () => {
       <div className="foooter-center">
             <div className='important-link'>Important Links</div>
                 <a href='https://www.chitkara.edu.in/anti-ragging-policy/' target='_blank'>Anti-Ragging Initiative</a>
-                <a href='https://www.nituk.ac.in/career-counselling-and-placement/home' target='_blank'>Career Counselling and Placement Section</a>
-                <a href='https://www.nituk.ac.in/right-to-informations' target='_blank'>Right To Information</a>
-                <a href='https://www.nituk.ac.in/special-cell' target='_blank'>Special Cell</a>
-                <a href='https://www.nituk.ac.in/grievance-cell' target='_blank'>Grievance Cell</a>
-                <a href='https://nituk.ac.in/nituk-contact' target='_blank'>Contact Us</a>
-                <a href='https://nituk.ac.in' target='_blank'>College Official Website</a>
+                <a href='https://www.chitkara.edu.in/?utm_source=Bing&utm_medium=Generic&msclkid=23bb4339e9e71fe8b61c2a89b7818908&utm_campaign=SearchCampaign_ChitkaraRegular&utm_term=Chitkara%20University&utm_content=Ad%20Group%201' target='_blank'>Career Counselling and Placement Section</a>
+                <a href='https://www.chitkara.edu.in/?utm_source=Bing&utm_medium=Generic&msclkid=23bb4339e9e71fe8b61c2a89b7818908&utm_campaign=SearchCampaign_ChitkaraRegular&utm_term=Chitkara%20University&utm_content=Ad%20Group%201' target='_blank'>Right To Information</a>
+                <a href='https://www.chitkara.edu.in/admissions/admission-helpline/' target='_blank'>Special Cell</a>
+                <a href='https://www.chitkara.edu.in/grievance-redressal/' target='_blank'>Grievance Cell</a>
+                <a href='https://www.chitkara.edu.in/marine/contact/' target='_blank'>Contact Us</a>
+                <a href='https://www.chitkara.edu.in/' target='_blank'>College Official Website</a>
 
 
       </div>

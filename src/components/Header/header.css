@@ -21,6 +21,7 @@
 .header-college-details-left-logo{
     width: 100px;
     height: 90px;
+    border-radius: 10%;
 }
 
 .header-college-details-name{
@@ -31,7 +32,7 @@
 
 .header-college-details-place{
     font-weight: 600;
-    color: rgb(102, 130, 27);
+    color: rgb(193, 47, 47);
 }
 
 .header-college-social-media{

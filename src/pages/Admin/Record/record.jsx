@@ -11,27 +11,27 @@ import RecordModal from './RecordModal/recordModal';
 export const Record = () => {
 
   const [studentRoll, setStudentRoll] = useState("");
-  const [listOfYear, setListOYear] = useState([]);
-  const [listOfMonths, setListOfMonths] = useState([]);
-  const currentYear = new Date().getFullYear();
+  const [listOfYear, setListOYear] = useState([]);//to get list of current and previous year in decreasing order
+  const [listOfMonths, setListOfMonths] = useState([]); //to get list of current month and all other passed in decreasing order so logic used
+  const currentYear = new Date().getFullYear();   ///to get current ongoing year
 
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("");
-  const [modal,setModal]=useState(false)
+  const [modal, setModal] = useState(false)   
 
-  const onOffModal=()=>{
-    setModal(prev=>!prev);
+  const onOffModal = () => {
+    setModal(prev => !prev); ///for page ko open close karne ke liye
   }
 
   const onChangeField = (value) => {
-    setStudentRoll(value)
+    setStudentRoll(value)///searchBox component mein iski help se current value of serachbox entered pass ki jaegi as useState used
   }
 
   const fetchData = async () => {
 
   }
 
-  useEffect(() => {
+  useEffect(() => {   ///for future when Backend Integrated
     if (selectedMonth === "" || selectedYear === "") {
       return;
     }
@@ -40,25 +40,26 @@ export const Record = () => {
   }, [selectedYear, selectedMonth])
 
   useEffect(() => {
+    ///below is year logic
     let arr = [];
     for (let i = 2026; i <= parseInt(currentYear); i++) {
-      arr.unshift(i.toString());
+      arr.unshift(i.toString());   //array ke strarting mein push kiya
     }
     setListOYear(arr);
     setSelectedYear(arr[0]);
-
+   ///below is month logic
     const months = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    const currentMonthIndex = new Date().getMonth();
+    const currentMonthIndex = new Date().getMonth();///gives 0 fro  January and 11 for December
 
-    const pastAndCurrentMonths = months.slice(0, currentMonthIndex + 1);
+    const pastAndCurrentMonths = months.slice(0, currentMonthIndex + 1);//months array se current month tak liya
     setListOfMonths(pastAndCurrentMonths);
     setSelectedMonth(pastAndCurrentMonths[pastAndCurrentMonths.length - 1]);
 
   }, [])
 
-  const handleOnOpenModal=()=>{
-    setModal(prev=>!prev);
+  const handleOnOpenModal = () => {
+    setModal(prev => !prev);
   }
 
   return (
@@ -67,7 +68,7 @@ export const Record = () => {
 
       <SearchBox value={studentRoll} onChange={onChangeField} placeholder="Search By Roll No." />
 
-      <div className='record-div-block'>Select Year
+      <div className='record-date-block'>Select Year
         <div className='record-date-year'>
           {
             listOfYear.map((item, index) => {
@@ -100,30 +101,40 @@ export const Record = () => {
             <div className='col-2-mng'>Student Name</div>
             <div className='col-2-mng'>Roll No.</div>
             <div className='col-3-mng'>Date</div>
-            </div>
+          </div>
 
 
           <div className="report-form-row-block">
-            <div className="report-form-row">
-              <div className='' onClick={()=>{handleOnOpenModal()}}><RemoveRedEyeIcon sx={{cursor:"pointer"}}/></div>
+            <div className="report-form-row">   
+              {/* ////////////below sx used to give styling to material ui icons */}
+              <div className='' onClick={() => { handleOnOpenModal() }}><RemoveRedEyeIcon sx={{ cursor: "pointer" }} /></div>
               <div className='col-2-mng'>Danish</div>
               <div className='col-2-mng'>2410991854</div>
 
-              <div className='col-3-mng'>12-12-2026</div>
-              </div>
-
+              <div className='col-3-mng'>12-12-2025</div>
+            </div>
+            
             <div className="report-form-row">
+              <div className='' onClick={() => { handleOnOpenModal() }}><RemoveRedEyeIcon sx={{ cursor: "pointer" }} /></div>
+              <div className='col-2-mng'>Simar </div>
+              <div className='col-2-mng'>2410991729</div>
+
+              <div className='col-3-mng'>11-3-2026</div>
+            </div>
+
+            {/* <div className="report-form-row">
               <div className=''>No Any Records Yet</div>
 
-            </div>
+            </div> */}
           </div>
 
         </div>
 
       </div>
-      {modal && <Modal header="Records" handleClose={onOffModal} children={<RecordModal/>}/>
-    }
-          </div>
+      {/* modal ke onOffModal bhi passed to check open or not on EYE CLICK*/}
+      {modal && <Modal header="Records" handleClose={onOffModal} children={<RecordModal />} />
+      }
+    </div>
   )
 }
 export default Record;

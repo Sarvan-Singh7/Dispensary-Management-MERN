@@ -4,9 +4,15 @@ import './aboutus.css'
 const AboutUs = () => {
   return (
     <div className='about-us'>
-      <p>The medical needs of the Campus population consisting of Students, Staff members and their families are met by the Institute Health Center. The Health Center has medical officer, nursing staff members and office attendant. The Institute Health center has facilities for OPD treatment. Health Center has Doctor’s room, Pharmacy, nursing station, observation room containing semi-fowler beds for patient care and visiting specialist’s room where services of Gynaecologist and Physiotherapist may be availed. There is a facility of ambulance 24X7 available for students, faculty and staff. The Ambulance is fully equipped with an oxygen cylinder, first aid kit bag, emergency medicines and other necessary equipment.</p>
+      <p>The health and wellness needs of the Chitkara University community — including students,
+        faculty, staff members, and their families — are comprehensively served by the University
+        Health Center located on campus. The Health Center provides reliable OPD services
+        throughout the academic year, with specialist services in Gynaecology and Physiotherapy
+        available through visiting consultants. A fully equipped Ambulance operates <strong>24×7</strong>,
+        stocked with an oxygen cylinder, first aid kit, emergency medicines, and all necessary
+        life-support equipment.</p>
 
-      <a className='about-link' href='https://drive.google.com/file/d/1E2Lmb-FZ_eL1UGgkvPENMXJTrxL3vlL0/view' target='_blank'>SoPs for NIT Uttarakhand health center services</a>
+      <a className='about-link' href='https://www.chitkara.edu.in/' target='_blank'>Chitkara University</a>
 
       <p className = 'about-staffHeader'>Staff Members</p>
       <ul>

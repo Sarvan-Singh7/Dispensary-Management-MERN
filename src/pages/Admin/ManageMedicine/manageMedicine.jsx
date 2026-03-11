@@ -9,11 +9,11 @@ import Modal from '../../../components/Modal/modal'
 import MedicineModal from './MedicineModal/medicineModal'
 
 export const ManageMedicine = () => {
-    const [medicineSearch, setMedicineSearch] = useState("");
-    const [addModal, setAddModal] = useState(false);
+    const [medicineSearch, setMedicineSearch] = useState(""); ///aisa hai ki har bar user jo type karega usko usestate se hande kiya hai sir so that search box ki value mein medicine search passed
+    const [addModal, setAddModal] = useState(false); //on Add button clicked
 
     const onOffmodal = () => {
-        setAddModal(prev => !prev)
+        setAddModal(prev => !prev)//true hai toh false kardo and vica versa
     }
     const onChangeValue = (value) => {
         setMedicineSearch(value);
@@ -51,20 +51,21 @@ export const ManageMedicine = () => {
                             <div className='col-2-mng'>Paracetamol</div>
                             <div className='col-2-mng'>Danish</div>
                             <div className='col-2-mng'>12</div>
-                            <div className=''><EditIcon/></div>
-                            <div className=''><DeleteIcon/></div>
-                            
-                    </div>
-                    
-                        <div className="report-form-row">
-                            <div className=''>No Any Medicine</div>  
-                    </div>
-                        
+                            <div className=''><EditIcon /></div>
+                            <div className=''><DeleteIcon /></div>
+
+                        </div>
+
+                        {/* <div className="report-form-row">
+                            <div className=''>No Any Medicine yet</div>  
+                    </div> */}
+
                     </div>
 
                 </div>
             </div>
-            {addModal && <Modal header="Add Medicine" handleClose={onOffmodal} children={<MedicineModal/>}/>}
+            {/* //below used common modal component and props passed to it and ye open close with help of Add button which further handled by onOffModal function */}
+            {addModal && <Modal header="Add Medicine" handleClose={onOffmodal} children={<MedicineModal />} />}
         </div>
 
     )

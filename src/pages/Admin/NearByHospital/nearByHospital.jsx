@@ -26,8 +26,8 @@ const  NearByHospital = () => {
         <div className='admin-facility-row'>
 
             <div className='admin-facility-left'>
-                <div className='admin-facility-title'>Name</div>
-                <div>Address :Delhi</div>
+                <div className='admin-facility-title'>Neelam Hospital</div>
+                <div>Address :Newar Chitkara University, Punjab</div>
                 <div>+9885467684</div>
                 <div style={{marginTop:"10px"}}>Added By :Deepanshu</div>
             </div>
