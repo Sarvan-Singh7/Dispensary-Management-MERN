@@ -14,10 +14,10 @@ import NearByHospitals from '../../components/NearByHospitals/nearByHospital'
 import Gallery from '../../components/Gallery/gallery'
 
 const Home = () => {
-   
+     
      const [page, setPage] = useState('aboutUs');//aboutUs, staff, facilities, nearbyHospitals, gallery ka selection
      const [rightSideHeader, setRightSideHeader] = useState('About Us');//aboutus etc ka heading that is in blue color
-
+    
     const handleChangeTab = (pagename) => {//so that when we click on about us, staff, facilities, nearbyHospitals, gallery then the right side header and page will change accordingly
         setPage(pagename);
         switch (pagename) {
