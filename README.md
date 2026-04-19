@@ -39,7 +39,7 @@
 - [Environment Variables](#-environment-variables)
 - [Screenshots](#-screenshots)
 - [Roadmap](#-roadmap)
-- [Author](#-author)
+- [Contributors](#-contributors)
 
 ---
 
@@ -176,7 +176,6 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
 
 ---
 
-## 📡 API Endpoints
 
 ### Auth Routes — `/api/auth`
 ```
@@ -219,7 +218,6 @@ GET    /logs              → View full activity logs
 
 ---
 
-## 📁 Project Structure
 
 ```
 Dispensary-Management-MERN/
@@ -261,7 +259,6 @@ Dispensary-Management-MERN/
 
 ---
 
-## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -314,7 +311,6 @@ npm run dev
 
 ---
 
-## 🔑 Environment Variables
 
 Create a `.env` file inside the `/server` folder:
 
@@ -372,6 +368,40 @@ OTP_EXPIRE_MINUTES=10
 
 ---
 
+## 👥 Contributors
+
+<div align="center">
+
+Thanks to these amazing people who built this project together 🙌
+
+<a href="https://github.com/Sarvan-Singh7">
+  <img src="https://github.com/Sarvan-Singh7.png" width="80px" style="border-radius:50%"/><br/>
+  <sub><b>Sarvan Singh</b></sub>
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/Dishu1871">
+  <img src="https://github.com/Dishu1871.png" width="80px" style="border-radius:50%"/><br/>
+  <sub><b>Deepanshu</b></sub>
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/Upandergarg">
+  <img src="https://github.com/Upandergarg.png" width="80px" style="border-radius:50%"/><br/>
+  <sub><b>Upander Garg</b></sub>
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/Death-Raider-2829">
+  <img src="https://github.com/Death-Raider-2829.png" width="80px" style="border-radius:50%"/><br/>
+  <sub><b>Simar Singh</b></sub>
+</a>
+
+<br/><br/>
+
+*Want to contribute? Feel free to open a PR!*
+
+</div>
+
+---
+
 ## 🤝 Contributing
 
 Contributions, suggestions, and improvements are welcome!
@@ -384,32 +414,6 @@ Contributions, suggestions, and improvements are welcome!
 
 ---
 
-## 👨‍💻 Author
-
 <div align="center">
-
-**Sarvan Singh**
-
-*CS Undergrad @ Chitkara University, Punjab*
-
-<p>
-  <a href="https://www.linkedin.com/in/sarvan-singh-6b3b27390/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-  <a href="mailto:singhsarvan2006@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
-  </a>
-  <a href="https://github.com/Sarvan-Singh7">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
-  </a>
-</p>
-
-*If this project helped you or impressed you, drop a ⭐ — it genuinely motivates me to keep building!*
-
-</div>
-
----
-
-<div align="center">
-  <sub>Built with ❤️ by <a href="https://github.com/Sarvan-Singh7">Sarvan Singh</a></sub>
+  <sub>Built with ❤️ by the Dispensary Management Team</sub>
 </div>
