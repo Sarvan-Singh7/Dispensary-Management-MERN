@@ -33,11 +33,6 @@
 - [Tech Stack](#-tech-stack)
 - [System Architecture](#-system-architecture)
 - [Role-Based Access](#-role-based-access)
-- [API Endpoints](#-api-endpoints)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [Screenshots](#-screenshots)
 - [Roadmap](#-roadmap)
 - [Contributors](#-contributors)
 
@@ -67,7 +62,7 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
 - JWT-based stateless authentication
 - Role-based access control (Admin / Staff / Student)
 - OTP-based password reset via email
-- Protected API routes with middleware
+- Protected routes with auth middleware
 - HTTP-only cookie sessions
 
 ### 👨‍💼 Admin Portal
@@ -75,7 +70,7 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
 - Manage staff accounts (create, update, deactivate)
 - View all student health records
 - Full medicine inventory control (add, edit, delete)
-- Generate reports and activity logs
+- Activity logs & reports
 
 ### 👩‍⚕️ Staff Portal
 - View and manage daily appointments
@@ -103,7 +98,7 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
 </p>
 
-### Backend
+### Backend *(planned)*
 <p>
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
@@ -111,7 +106,7 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
   <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white"/>
 </p>
 
-### Security & Tools
+### Security & Tools *(planned)*
 <p>
   <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
   <img src="https://img.shields.io/badge/Bcrypt-003A70?style=for-the-badge&logo=letsencrypt&logoColor=white"/>
@@ -126,7 +121,7 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                     CLIENT (React + Vite)               │
+│                  CLIENT (React + Vite)                  │
 │                                                         │
 │   ┌──────────┐   ┌──────────┐   ┌──────────────────┐   │
 │   │  Admin   │   │  Staff   │   │     Student      │   │
@@ -138,7 +133,7 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
                         │  REST API (Axios)
                         │
 ┌───────────────────────▼─────────────────────────────────┐
-│                  SERVER (Node.js + Express)              │
+│               SERVER (Node.js + Express)                │
 │                                                         │
 │   ┌─────────────────────────────────────────────────┐   │
 │   │              JWT Auth Middleware                │   │
@@ -152,9 +147,9 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
 └────────┼────────────────┼──────────────────┼────────────┘
          │                │                  │
 ┌────────▼────────────────▼──────────────────▼────────────┐
-│                   MongoDB Atlas                          │
+│                     MongoDB Atlas                        │
 │                                                         │
-│   Users    Appointments    Medicines    HealthRecords   │
+│    Users   Appointments   Medicines   HealthRecords     │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -166,8 +161,8 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
 |---|:---:|:---:|:---:|
 | View All Students | ✅ | ✅ | ❌ |
 | Manage Staff Accounts | ✅ | ❌ | ❌ |
-| Medicine Inventory (Full) | ✅ | ❌ | ❌ |
-| Medicine Inventory (View) | ✅ | ✅ | ❌ |
+| Medicine Inventory (Full Control) | ✅ | ❌ | ❌ |
+| Medicine Inventory (View Only) | ✅ | ✅ | ❌ |
 | Book Appointment | ❌ | ❌ | ✅ |
 | Issue Medicine to Student | ❌ | ✅ | ❌ |
 | View Own Health Records | ✅ | ✅ | ✅ |
@@ -176,189 +171,25 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
 
 ---
 
-
-### Auth Routes — `/api/auth`
-```
-POST   /register          → Register new user
-POST   /login             → Login & receive JWT
-POST   /logout            → Clear session token
-POST   /forgot-password   → Send OTP to email
-POST   /verify-otp        → Verify OTP code
-POST   /reset-password    → Set new password
-```
-
-### Student Routes — `/api/student`
-```
-GET    /profile           → Get student profile
-PUT    /profile           → Update profile info
-GET    /appointments      → Get appointment history
-POST   /appointments      → Book new appointment
-GET    /health-records    → Get personal health records
-```
-
-### Staff Routes — `/api/staff`
-```
-GET    /appointments      → View all appointments
-PUT    /appointments/:id  → Update appointment status
-POST   /prescriptions     → Issue medicine to student
-GET    /inventory         → View medicine inventory
-```
-
-### Admin Routes — `/api/admin`
-```
-GET    /users             → Get all registered users
-POST   /staff             → Create new staff account
-DELETE /staff/:id         → Deactivate staff account
-GET    /inventory         → Full inventory access
-POST   /inventory         → Add new medicine
-PUT    /inventory/:id     → Update medicine details
-DELETE /inventory/:id     → Remove medicine from stock
-GET    /logs              → View full activity logs
-```
-
----
-
-
-```
-Dispensary-Management-MERN/
-│
-├── 📁 client/                      # React Frontend (Vite)
-│   ├── 📁 src/
-│   │   ├── 📁 components/
-│   │   │   ├── 📁 Admin/           # Admin portal components
-│   │   │   ├── 📁 Staff/           # Staff portal components
-│   │   │   └── 📁 Student/         # Student portal components
-│   │   ├── 📁 pages/               # Route-level page components
-│   │   ├── 📁 context/             # React context (AuthContext)
-│   │   ├── 📁 hooks/               # Custom React hooks
-│   │   ├── 📁 utils/               # Axios config, helper functions
-│   │   └── App.jsx
-│   └── package.json
-│
-├── 📁 server/                      # Node.js + Express Backend
-│   ├── 📁 controllers/             # Business logic layer
-│   │   ├── authController.js
-│   │   ├── studentController.js
-│   │   ├── staffController.js
-│   │   └── adminController.js
-│   ├── 📁 models/                  # Mongoose schemas
-│   │   ├── User.js
-│   │   ├── Appointment.js
-│   │   ├── Medicine.js
-│   │   └── HealthRecord.js
-│   ├── 📁 routes/                  # Express route definitions
-│   ├── 📁 middleware/              # Custom middleware
-│   │   ├── authMiddleware.js       # JWT token verification
-│   │   └── roleMiddleware.js       # Role-based access guard
-│   ├── 📁 utils/                   # OTP generator, email sender
-│   ├── .env.example
-│   └── server.js
-│
-└── README.md
-```
-
----
-
-
-### Prerequisites
-
-Make sure you have the following installed:
-- [Node.js](https://nodejs.org/) v18 or above
-- [MongoDB Atlas](https://cloud.mongodb.com/) account (free tier works)
-- [Git](https://git-scm.com/)
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/Sarvan-Singh7/Dispensary-Management-MERN.git
-cd Dispensary-Management-MERN
-```
-
-### 2. Install Dependencies
-
-```bash
-# Install server dependencies
-cd server
-npm install
-
-# Install client dependencies
-cd ../client
-npm install
-```
-
-### 3. Setup Environment Variables
-
-```bash
-# In the /server directory
-cp .env.example .env
-# Open .env and fill in your values
-```
-
-### 4. Run the Application
-
-```bash
-# Terminal 1 — Start backend (from /server)
-npm run dev
-
-# Terminal 2 — Start frontend (from /client)
-npm run dev
-```
-
-| Service | URL |
-|---|---|
-| Frontend | `http://localhost:5173` |
-| Backend API | `http://localhost:5000` |
-
----
-
-
-Create a `.env` file inside the `/server` folder:
-
-```env
-# Server Config
-PORT=5000
-NODE_ENV=development
-
-# MongoDB Atlas
-MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/dispensary
-
-# JWT
-JWT_SECRET=your_super_secret_jwt_key_here
-JWT_EXPIRE=7d
-
-# Nodemailer (for OTP emails)
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_gmail_app_password
-
-# OTP Config
-OTP_EXPIRE_MINUTES=10
-```
-
-> ⚠️ Never push your `.env` file to GitHub. It is already listed in `.gitignore`.
-
----
-
-## 📸 Screenshots
-
-> 🚧 UI screenshots will be added upon completion of frontend.
-
-| Admin Dashboard | Staff Portal | Student Portal |
-|:---:|:---:|:---:|
-| *Coming Soon* | *Coming Soon* | *Coming Soon* |
-
----
-
 ## 🗺️ Roadmap
 
-- [x] Project setup with MERN stack + Vite
-- [x] JWT Authentication (login / register / logout)
-- [x] Role-based routing — Admin, Staff, Student
-- [x] Student registration & profile management
-- [x] Appointment booking system
-- [x] Medicine inventory module
-- [x] OTP-based password reset via email
+### ✅ Completed
+- [x] Project setup — React + Vite
+- [x] Role-based UI routing — Admin, Staff, Student portals
+- [x] Authentication pages — Login, Register, Forgot Password
+
+- [x] Student appointment booking (UI)
+- [x] Medicine inventory module (UI)
+- [x] Student profile management (UI)
+
+### 🔄 In Progress
+- [ ] Backend — Node.js + Express server setup
+- [ ] MongoDB Atlas integration with Mongoose
+- [ ] JWT authentication implementation
+- [ ] REST API — Auth routes (register, login, OTP reset)
+
+### 📋 Planned
+- [ ] REST API — Student, Staff, Admin routes
 - [ ] Student health records module
 - [ ] Admin analytics dashboard
 - [ ] Email notifications for appointment updates
@@ -373,6 +204,8 @@ OTP_EXPIRE_MINUTES=10
 <div align="center">
 
 Thanks to these amazing people who built this project together 🙌
+
+<br/><br/>
 
 <a href="https://github.com/Sarvan-Singh7">
   <img src="https://github.com/Sarvan-Singh7.png" width="80px" style="border-radius:50%"/><br/>
@@ -404,7 +237,7 @@ Thanks to these amazing people who built this project together 🙌
 
 ## 🤝 Contributing
 
-Contributions, suggestions, and improvements are welcome!
+Contributions, suggestions, and improvements are always welcome!
 
 1. Fork the repository
 2. Create your feature branch: `git checkout -b feature/YourFeature`
