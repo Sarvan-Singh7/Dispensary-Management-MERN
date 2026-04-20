@@ -205,29 +205,34 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
 
 Thanks to these amazing people who built this project together 🙌
 
-<br/><br/>
-
-<a href="https://github.com/Sarvan-Singh7">
-  <img src="https://github.com/Sarvan-Singh7.png" width="80px" style="border-radius:50%"/><br/>
-  <sub><b>Sarvan Singh</b></sub>
-</a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://github.com/Dishu1871">
-  <img src="https://github.com/Dishu1871.png" width="80px" style="border-radius:50%"/><br/>
-  <sub><b>Deepanshu</b></sub>
-</a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://github.com/Upandergarg">
-  <img src="https://github.com/Upandergarg.png" width="80px" style="border-radius:50%"/><br/>
-  <sub><b>Upander Garg</b></sub>
-</a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://github.com/Death-Raider-2829">
-  <img src="https://github.com/Death-Raider-2829.png" width="80px" style="border-radius:50%"/><br/>
-  <sub><b>Simar Singh</b></sub>
-</a>
-
-<br/><br/>
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Sarvan-Singh7">
+        <img src="https://github.com/Sarvan-Singh7.png" width="80px" alt="Sarvan Singh"/><br/>
+        <sub><b>Sarvan Singh</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Dishu1871">
+        <img src="https://github.com/Dishu1871.png" width="80px" alt="Deepanshu"/><br/>
+        <sub><b>Deepanshu</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Upandergarg">
+        <img src="https://github.com/Upandergarg.png" width="80px" alt="Upander Garg"/><br/>
+        <sub><b>Upander Garg</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Death-Raider-2829">
+        <img src="https://github.com/Death-Raider-2829.png" width="80px" alt="Simar Singh"/><br/>
+        <sub><b>Simar Singh</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
 *Want to contribute? Feel free to open a PR!*
 
