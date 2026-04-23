@@ -12,8 +12,8 @@ app.get("/", (req, res) => {
   res.send({ message: "Welcome to the backend of the dispensary management system!" });
 })
 
-app.listen(4000, () => {
-  console.log("Server running on Port 4000");
+app.listen(process.env.PORT, () => {
+  console.log("Server running on Port ", process.env.PORT);
 })
 
 

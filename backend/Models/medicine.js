@@ -17,4 +17,4 @@ const MedicineSchema = new mongoose.Schema({
 }, {timestamps: true});
 
 const medicineModel = mongoose.model("medicine", medicineSchema);
-module.exports = medicineModel;
+module.exports = medicineModel;       
