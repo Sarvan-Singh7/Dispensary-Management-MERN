@@ -16,6 +16,7 @@ router.get('/get-student-by-roll/:roll',Authentication.adminFacultyAuth,UserCont
 
 router.post('/registerStudentByStaff',Authentication.adminFacultyAuth,UserController.registerStudentByStaff);
 
+//staff routes
 router.post("/add-staff",Authentication.adminFacultyAuth,UserController.addStaffByAdmin);
 
 //we are not using middleware because  we will show too all whether login or logout
@@ -24,6 +25,13 @@ router.get("/get-staff",UserController.getAllStaffs);
 router.put("/update-staff/:id",Authentication.adminFacultyAuth,UserController.updateStaffById);
 
 router.delete("/delete-staff/:id",Authentication.adminFacultyAuth,UserController.deleteStaff);
+
 router.post("/logout", Authentication.studentAuth, UserController.logout);
+
+
+
+
+
+
 
 module.exports = router;

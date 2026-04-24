@@ -7,7 +7,9 @@ app.use(express.json());
 app.use(cookieparser());
 require('./connection');    //by this line we are connecting to MongoDb Cloud, through connection.js file
 const userRoutes = require("./Routes/user");
+const facilityRoutes = require("./Routes/facility");
 app.use("/api/auth", userRoutes);
+app.use("/api/facility", facilityRoutes);
 app.get("/", (req, res) => {
   res.send({ message: "Welcome to the backend of the dispensary management system!" });
 })
