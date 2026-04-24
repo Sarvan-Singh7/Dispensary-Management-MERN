@@ -181,3 +181,87 @@ exports.resetPassword = async(req, res) => {
     })
   }
 }
+
+exports.updateStudentById = async(req, res) => {
+  try{
+const {id} = req.params;
+const updateStudent = await UserModels.findByIdAndUpdate(id, req.body, {new : true}); //new true means that it will return the updated document instead of the old one
+if(updateStudent){
+ return res.status(200).json({ message : "Staff update successfully" });
+}
+return res.status(400).json({ error : "Student not found with this id" });
+} 
+  catch(err){
+    console.log(err);
+    res.status(500).json({
+      error : "Something went Wrong",
+      issue : err.message
+    })
+  }
+}
+
+
+exports.getStudentByRollNo = async(req, res) => {
+  try{
+    const {roll} = req.params;
+    const student = await UserModels.findOne({roll});
+    if(student){
+      return res.status(200).json({message: "Student found", student });
+    }
+    return res.status(400).json({ error : "Student not found with this roll number" });
+  } 
+  catch(err){
+    console.log(err); 
+    res.status(500).json({
+      error : "Something went Wrong",
+      issue : err.message
+    })
+  }
+}
+
+//password is going to generate by backend and send to student by email , admin dont know about passsword
+
+exports.registerStudentByStaff = async(req, res) => {
+  try{
+    
+    const buffer = crypto.randomBytes(4); // Generate a random 4-byte buffer
+let token= buffer.readInt32BE(0) % 900000 + 100000; // Convert buffer to a 6-digit number
+ let {_id, ...body} = req.body;
+const isExist = await UserModels.findOne({email : body.email});
+
+if(isExist){
+  return res.status(400).json({ error : "User already exists with this email" });
+}
+token= token.toString(); // Convert token to string before hashing
+
+let updatedPass= await bcryptjs.hash(token, 10); // Hash the generated password before saving
+
+const user = new UserModels({...body, password : updatedPass});
+await user.save();
+    const mailOptions = {
+      from: process.env.EMAIL,
+      to: email,
+      subject: 'Password for dispensary system',
+      text: `Hi, your password is  ${token} whos email id is ${body.email} and roll number is ${body.roll} . Please change your password after login.`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        
+        return res.status(500).json({ error: 'server error',errorMsg: error });
+      } else {
+        
+        return res.status(200).json({ message: 'password sent to student email id' });
+      } 
+  
+  });
+
+} 
+  catch(err){
+    console.log(err); 
+    res.status(500).json({
+      error : "Something went Wrong",
+      issue : err.message
+    })
+  }
+}
