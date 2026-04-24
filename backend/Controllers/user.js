@@ -265,3 +265,111 @@ await user.save();
     })
   }
 }
+
+
+exports.addStaffByAdmin = async(req, res) => {
+try{
+const {name,email,password,designation,mobileNo}= req.body;
+const searchStaff= await UserModels.findOne({email});
+if(searchStaff){
+  return res.status(400).json({ error : "User already exists with this email" });
+}
+let updatePass= await bcryptjs.hash(password, 10); // Hash the generated password before saving
+
+const user= new UserModels({name,email,password : updatePass,designation,mobileNo,role : "staff"});
+await user.save();
+
+const mailOptions = {
+      from: process.env.EMAIL,
+      to: email,
+      subject: 'Password for dispensary system',
+      text: `Hi, your password for Dispensary System is  ${password} whos email id is ${email} for staff portal`
+
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        
+        return res.status(500).json({ error: 'server error',errorMsg: error });
+      } else {
+        
+        return res.status(200).json({ message: "password sent to staff email id" });
+      } 
+  
+  });
+}
+catch(err){
+    console.log(err); 
+    res.status(500).json({
+      error : "Something went Wrong",
+      issue : err.message
+    })
+  }
+}
+
+
+exports.getAllStaffs = async(req, res) => {
+try{
+const staffs= await UserModels.find({role : "staff"}); 
+return res.status(200).json({ staffs });
+}
+catch(err){
+    console.log(err); 
+    res.status(500).json({
+      error : "Something went Wrong",
+      issue : err.message
+    })
+  }
+}
+
+exports.updateStaffById = async(req, res) => {
+
+try{
+const {id}= req.params;
+const{ name,designation,mobileNo} = req.body;
+const staff= await UserModels.findById(id);
+if(staff){
+staff.name= name 
+staff.designation= designation 
+staff.mobileNo= mobileNo
+await staff.save();
+return res.status(200).json({ message : "Staff updated successfully" });
+}else{
+return res.status(400).json({ error : "Staff not found with this id" });
+}
+}
+catch(err){
+    console.log(err); 
+    res.status(500).json({
+      error : "Something went Wrong",
+      issue : err.message
+    })
+  }
+
+}
+
+exports.deleteStaff = async(req, res) => {
+try{
+const {id}= req.params
+const deletedUser= await UserModels.findByIdAndDelete(id);
+if(deletedUser){
+return res.status(200).json({ message : "Staff deleted successfully" });
+}else{
+return res.status(400).json({ error : "Staff not found with this id" });
+}
+}
+catch(err){
+    console.log(err); 
+    res.status(500).json({
+      error : "Something went Wrong",
+      issue : err.message
+    })
+  }
+
+}
+
+
+exports.logout = async(req, res) => {
+res.clearCookie('token', cookieOptions).json({ message : "Logout successful" });
+
+}

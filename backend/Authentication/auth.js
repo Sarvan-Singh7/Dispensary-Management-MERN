@@ -1,5 +1,9 @@
 const jwt = require("jsonwebtoken");
 
+
+//importing this ..
+const userModel = require("../Models/user");
+
 exports.studentAuth = async(req, res, next)=> {
    try{
     const token = req.cookies.token; // Assuming the token is stored in a cookie named 'token'
