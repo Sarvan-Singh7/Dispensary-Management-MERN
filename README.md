@@ -98,7 +98,7 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
 </p>
 
-### Backend *(planned)*
+### Backend 
 <p>
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
@@ -106,7 +106,7 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
   <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white"/>
 </p>
 
-### Security & Tools *(planned)*
+### Security & Tools 
 <p>
   <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
   <img src="https://img.shields.io/badge/Bcrypt-003A70?style=for-the-badge&logo=letsencrypt&logoColor=white"/>
@@ -181,14 +181,11 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
 - [x] Student appointment booking (UI)
 - [x] Medicine inventory module (UI)
 - [x] Student profile management (UI)
+- [x] Backend — Node.js + Express server setup
+- [x] MongoDB Atlas integration with Mongoose
+- [x] JWT authentication implementation
 
 ### 🔄 In Progress
-- [ ] Backend — Node.js + Express server setup
-- [ ] MongoDB Atlas integration with Mongoose
-- [ ] JWT authentication implementation
-- [ ] REST API — Auth routes (register, login, OTP reset)
-
-### 📋 Planned
 - [ ] REST API — Student, Staff, Admin routes
 - [ ] Student health records module
 - [ ] Admin analytics dashboard
