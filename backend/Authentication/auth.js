@@ -16,7 +16,7 @@ exports.studentAuth = async(req, resizeBy, next)=> {
 }
 
 
-exports.adminFacultyAuth = async(req, resizeBy, next)=> {
+exports.adminFacultyAuth = async(req, res, next)=> {
    try{
     const token = req.cookies.token; // Assuming the token is stored in a cookie named 'token'
     if(token){

@@ -33,7 +33,7 @@ exports.register = async(req, res) => {
     }
 
     const hashedPassword = await bcryptjs.hash(password, 10); //hashing the password before storing it in DB and 10 means number of rounds
-   ///agar isExist ne null return kiya o store to DB
+   ///agar isExist ne null return kiya so store to DB
 
     const user = new UserModels({name, email, password : hashedPassword, roll});   ///see password hashed by this
     
@@ -144,7 +144,7 @@ exports.verifyOtp = async(req, res) => {
       return res.status(400).json({ error : "Invalid OTP or OTP has expired" });
     }
     return res.status(200).json({ message : "OTP verified successfully, you can now reset your password" });
-
+    
   }
   catch(err){
     console.log(err);
