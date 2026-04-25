@@ -5,13 +5,21 @@ const cookieparser = require("cookie-parser");
 
 app.use(express.json());
 app.use(cookieparser());
+
+
+
 require('./connection');    //by this line we are connecting to MongoDb Cloud, through connection.js file
 const userRoutes = require("./Routes/user");
 const facilityRoutes = require("./Routes/facility");
 const medicineRoutes = require("./Routes/medicine");
+const hospitalRoutes = require("./Routes/nearByHospital")
 app.use("/api/auth", userRoutes);
 app.use("/api/facility", facilityRoutes);
 app.use("/api/medicine", medicineRoutes);
+app.use("/api/hospital", hospitalRoutes);
+
+
+
 app.get("/", (req, res) => {
   res.send({ message: "Welcome to the backend of the dispensary management system!" });
 })
