@@ -3,11 +3,16 @@ const UserController = require("../Controllers/user");
 const router = express.Router();
 const Authentication= require("../Authentication/auth")
 
+//auth routes
 router.post("/register", UserController.register);
 router.post("/login", UserController.login);
 router.post('/send-otp', UserController.sendOtp);
 router.post('/verify-otp', UserController.verifyOtp);
 router.post('/reset-password', UserController.resetPassword);
+
+
+
+/////////student routes
 
 // want only particular type of user can access this 
 router.put('/update-student/:id',Authentication.adminFacultyAuth,UserController.updateStudentById);
@@ -16,7 +21,8 @@ router.get('/get-student-by-roll/:roll',Authentication.adminFacultyAuth,UserCont
 
 router.post('/registerStudentByStaff',Authentication.adminFacultyAuth,UserController.registerStudentByStaff);
 
-//staff routes
+
+///////////staff routes
 router.post("/add-staff",Authentication.adminFacultyAuth,UserController.addStaffByAdmin);
 
 //we are not using middleware because  we will show too all whether login or logout
