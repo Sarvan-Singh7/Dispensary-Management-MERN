@@ -13,3 +13,8 @@ second day
 third day 
 5- made routes for medicine get, add , update, search delete
 
+4th day
+6- made routes for facility   get,add, update delete
+
+
+
