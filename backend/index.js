@@ -13,10 +13,12 @@ const userRoutes = require("./Routes/user");
 const facilityRoutes = require("./Routes/facility");
 const medicineRoutes = require("./Routes/medicine");
 const hospitalRoutes = require("./Routes/nearByHospital")
+const notificationRoutes = require("./Routes/notification");
 app.use("/api/auth", userRoutes);
 app.use("/api/facility", facilityRoutes);
 app.use("/api/medicine", medicineRoutes);
 app.use("/api/hospital", hospitalRoutes);
+app.use("/api/notification", notificationRoutes);
 
 
 
