@@ -10,3 +10,6 @@ in 2 they can get the student detils ny admin and faculit
 second day
 4-  add staff, get staff, update staff, delete staff , logout
 
+third day 
+5- made routes for medicine get, add , update, search delete
+
