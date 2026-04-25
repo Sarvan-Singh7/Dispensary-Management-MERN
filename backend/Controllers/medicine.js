@@ -22,6 +22,7 @@ res.status(200).json({
 
 exports.getMedicine = async (req, res) => {
 try{
+    //if we dont write name then it will show all detials load will inc , so we will write name then it will show only name and id and rest details will not show
 const medicines = await MedicineModels.find().populate("addedBy","name").sort({createdAt: -1});
 return res.status(200).json({
     message : "Medicines Retrieved Successfully",
