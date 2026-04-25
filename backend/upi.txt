@@ -7,3 +7,6 @@ in this 1- facult or admin can updat student detials
 in 2 they can get the student detils ny admin and faculit 
 3-  admin or fac can register student without knowing the apssword , and password is going to send to email of student and he can change it thorugh forget epassword
 
+second day
+4-  add staff, get staff, update staff, delete staff , logout
+
