@@ -21,4 +21,7 @@ third day
 
 routes complete form user to nearbyhospital , fully tested also😁👍
 
+8- added routes form notifications
+added routese for gallary also😁👍
+
 
