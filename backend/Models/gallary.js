@@ -10,7 +10,7 @@ const gallarySchema = new mongoose.Schema({
         required:true
     }
 
-}, { timestamps: true });
+},{timestamps:true});
 
 const gallaryModel = mongoose.model("gallary", gallarySchema);
 module.exports = gallaryModel;

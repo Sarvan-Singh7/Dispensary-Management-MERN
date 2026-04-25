@@ -1,0 +1,24 @@
+first day - mmade routes like 
+1 update-student/:id
+2 get-student-by-roll/:roll
+3 registerStudentByStaff
+
+in this 1- facult or admin can updat student detials
+in 2 they can get the student detils ny admin and faculit 
+3-  admin or fac can register student without knowing the apssword , and password is going to send to email of student and he can change it thorugh forget epassword
+
+second day
+4-  add staff, get staff, update staff, delete staff , logout
+
+third day 
+5- made routes for medicine get, add , update, search delete
+
+4th day
+6- made routes for facility   get,add, update delete
+
+5ht day
+7- made routes for nearby hospital add,get,update,delte
+
+routes complete form user to nearbyhospital , fully tested also😁👍
+
+
