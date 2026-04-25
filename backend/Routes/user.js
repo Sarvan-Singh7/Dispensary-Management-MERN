@@ -32,6 +32,9 @@ router.put("/update-staff/:id",Authentication.adminFacultyAuth,UserController.up
 
 router.delete("/delete-staff/:id",Authentication.adminFacultyAuth,UserController.deleteStaff);
 
+
+
+//this route is for all
 router.post("/logout", Authentication.studentAuth, UserController.logout);
 
 
