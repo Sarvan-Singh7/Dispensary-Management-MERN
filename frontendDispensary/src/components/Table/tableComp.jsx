@@ -66,6 +66,10 @@ const TableComp = (props) => {
             )
           })
         }
+
+        {
+          props.data.length==0 ? <StyledTableRow><StyledTableCell colspan={props.header.length}>No data available</StyledTableCell></StyledTableRow> : null
+        }
         </TableBody>
 
         
