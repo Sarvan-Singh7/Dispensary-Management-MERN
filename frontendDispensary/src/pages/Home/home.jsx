@@ -13,7 +13,7 @@ import Facility from '../../components/Facilities/facility'
 import NearByHospitals from '../../components/NearByHospitals/nearByHospital'
 import Gallery from '../../components/Gallery/gallery'
 
-const Home = () => {
+const Home = (props) => {
      
      const [page, setPage] = useState('aboutUs');//aboutUs, staff, facilities, nearbyHospitals, gallery ka selection
      const [rightSideHeader, setRightSideHeader] = useState('About Us');//aboutus etc ka heading that is in blue color
@@ -47,15 +47,15 @@ const Home = () => {
           return <AboutUs/>
         
         case "Staff":
-          return <Staff/>
+          return <Staff showLoader={props.showLoader} hideLoader={props.hideLoader} />
 
         case "Facilities":
-          return <Facility/>
+          return <Facility showLoader={props.showLoader} hideLoader={props.hideLoader}/>
 
         case "NearByHospitals":
-          return <NearByHospitals/>
+          return <NearByHospitals showLoader={props.showLoader} hideLoader={props.hideLoader}/>
         case "Gallery":
-          return <Gallery/>
+          return <Gallery showLoader={props.showLoader} hideLoader={props.hideLoader}/>
 
           default:
             return <AboutUs/>;

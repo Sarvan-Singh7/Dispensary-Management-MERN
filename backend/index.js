@@ -2,11 +2,15 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cookieparser = require("cookie-parser");
-
+const cors = require("cors");
 app.use(express.json());
 app.use(cookieparser());
 
 
+app.use(cors({
+  credentials: true,
+  origin:"http://localhost:5173"
+}));
 
 require('./connection');    //by this line we are connecting to MongoDb Cloud, through connection.js file
 const userRoutes = require("./Routes/user");
