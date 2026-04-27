@@ -2,12 +2,14 @@ import React from 'react'
 import './header.css'
 import { useState, useEffect } from 'react'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { Link, useLocation } from 'react-router-dom';//link tag used to navigate betweeen different pages and also change URL
-const Header = () => {
+import { Link, useLocation ,useNavigate } from 'react-router-dom';//link tag used to navigate betweeen different pages and also change URL
+import axios from 'axios';
+import {toast, ToastContainer} from 'react-toastify'
+const Header = (props) => {
   const location = useLocation() //hook to get current location
   const [eventpopup, setEventpopup] = useState(false);
   const [helpline, setHelpline] = useState(false);
-
+  const navigate=useNavigate();
   const handleOpenPopup = (popup) => {
     if (popup === "event") {
       setEventpopup(true);
@@ -23,6 +25,25 @@ const Header = () => {
       setHelpline(false)
     }
   }
+
+  const handleLogin=()=>{
+    navigate('/login')
+  }
+  const handleLogout=async()=>{
+    props.showLoader();
+    await axios.post('http://localhost:4000/api/auth/logout',{},{withCredentials:true}).then((response)=>{
+      // console.log(response);
+      props.handleLogin(false);
+      localStorage.clear();
+      navigate('/');
+    }).catch(err=>{
+      // console.log(err);
+      toast.error(err?.response?.data?.error)
+    }).finally(()=>{
+      props.hideLoader();
+    })
+  }
+
   return (
     <div className='header'>
       <div className='header-college-details'>
@@ -51,9 +72,9 @@ const Header = () => {
         <Link to={'/'} className={`navbar-links ${location.pathname === '/' ? 'active-link' : null}`}>
           Home
         </Link>
-        <Link to={'/login'} className={`navbar-links ${location.pathname === '/login' ? 'active-link' : null}`}>
-          Login
-        </Link>
+        <div onClick={props.isLogin?handleLogout:handleLogin} className={`navbar-links ${location.pathname === '/login' ? 'active-link' : null}`}>
+          {props.isLogin ? "Logout" : "Login"}
+        </div>
         <Link to={'/stock'} className={`navbar-links ${location.pathname === '/stock' ? 'active-link' : null}`}>
           Stock View
         </Link>
@@ -88,7 +109,7 @@ const Header = () => {
           <img src={"https://mindtrip.ai/attractions/d886/b971/07b6/6547/069b/007f/8709/6725"} className='header-banner-image' />
         </div>
       }
-
+      <ToastContainer />
     </div>
   )
 }
