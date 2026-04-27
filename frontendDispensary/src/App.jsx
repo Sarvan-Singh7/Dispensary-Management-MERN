@@ -18,6 +18,10 @@ import GlobalLoader from './components/GlobalLoader/globalLoader'
 function App() {
   const [count, setCount] = useState(0)
   const [loader,setLoader]=useState(false);
+  const [isLogin,setIsLogin]=useState(localStorage.getItem('isLogin'));
+  const handleLogin=(value)=>{
+    setIsLogin(value);
+  }
   const showLoader=()=>{
     setLoader(true);
   }
@@ -26,10 +30,10 @@ function App() {
   }
   return (
     <div className='App'>
-      <Header />
+      <Header isLogin={isLogin}handleLogin={handleLogin} showLoader={showLoader} hideLoader={hideLoader} />
       <Routes>
         <Route path='/' element={<Home showLoader={showLoader} hideLoader={hideLoader}  />} />
-        <Route path='/login' element={<Login showLoader={showLoader} hideLoader={hideLoader} />} />
+        <Route path='/login' element={<Login handleLogin={handleLogin} showLoader={showLoader} hideLoader={hideLoader} />} />
         <Route path='/stock' element={<Stock showLoader={showLoader} hideLoader={hideLoader} />} />
         <Route path='/admin/dashboard' element={<AdminDashboard showLoader={showLoader} hideLoader={hideLoader}/>} />
         <Route path='/admin/register-student' element={<RegisterStudent showLoader={showLoader} hideLoader={hideLoader} />} />
