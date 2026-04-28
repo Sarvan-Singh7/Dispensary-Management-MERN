@@ -10,6 +10,8 @@ const Header = (props) => {
   const [eventpopup, setEventpopup] = useState(false);
   const [helpline, setHelpline] = useState(false);
   const navigate=useNavigate();
+  const [events, setEvents]=useState([]);
+  
   const handleOpenPopup = (popup) => {
     if (popup === "event") {
       setEventpopup(true);
@@ -18,6 +20,21 @@ const Header = (props) => {
     }
   }
 
+  const fetchEvents=async()=>{
+await axios.get(`http://localhost:4000/api/notification/get`).then()(response=>{
+
+  setEvents(response.data.notifications);
+  }).catch(err=>{
+    console.log(err);
+  })
+  
+}
+
+  useEffect(()=>{
+    if(eventpopup){
+      fetchEvents()
+    }
+  },[eventpopup])
   const handleClosePopup = (popup) => {
     if (popup === "event") {
       setEventpopup(false);
@@ -82,11 +99,14 @@ const Header = (props) => {
           <div className='navbar-link-opt'>New Events <ArrowDropDownIcon /></div>
           {
             eventpopup && (<div className='navbar-dropdown-popup event-pop'>
-              <div className='popup-notification'> Diwali Celebration</div>
-              <div className='popup-notification'> Holi</div>
-              <div className='popup-notification'> Independence Day</div>
-              <div className='popup-notification'> Republic Day</div>
-              <div className='popup-notification'> Eid al-Adha</div>
+              {
+                events.map((item,index)=>{
+                  return (
+                    <div className='popup-notification'>{item.title}</div>
+                  )
+                })
+              }
+              
             </div>)
           }
 
