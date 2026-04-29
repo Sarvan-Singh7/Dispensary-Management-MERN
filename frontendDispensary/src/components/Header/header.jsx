@@ -21,7 +21,7 @@ const Header = (props) => {
   }
 
   const fetchEvents=async()=>{
-await axios.get(`http://localhost:4000/api/notification/get`).then()(response=>{
+await axios.get(`http://localhost:4000/api/notification/get`).then((response)=>{
 
   setEvents(response.data.notifications);
   }).catch(err=>{

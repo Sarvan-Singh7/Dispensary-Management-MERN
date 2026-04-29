@@ -57,18 +57,18 @@ const handleAddStaff=async(e)=>{
     props.showLoader();
     await axios.post(`http://localhost:4000/api/auth/add-staff`,inputField,{withCredentials:true}).then((response)=>{
     toast.success(response.data.message);
-    setStaffs(inputField, ...staffs);
+    setStaffs([inputField, ...staffs]);
     setInputField({name:"",email:"",password:"",designation:"",mobileNo:""})
     }).catch((err)=>{
         toast.error(err?.respnse?.data?.error);
     }).finally(()=>{
         props.hideLoader();
     });
+}
 
-    const handleOnEditBtn=async(item)=>{
-        setClickedStaff(item);
-        setInputField(...inputField,...item)
-    }
+const handleOnEditBtn=async(item)=>{
+    setClickedStaff(item);
+    setInputField({...inputField,...item})
 }
 
 const fileterOutData=(id)=>{
@@ -77,7 +77,7 @@ const fileterOutData=(id)=>{
 }
 
 const handleDelete=async(id)=>{
-    await axios.delete(`http://localhost:4000/api/auth/delete-staff${id}`,{withCredentials:true}).then((response)=>{
+    await axios.delete(`http://localhost:4000/api/auth/delete-staff/${id}`,{withCredentials:true}).then((response)=>{
         fileterOutData(id);
     }).catch(err=>{
         toast.error(err?.respnse?.data?.error)
@@ -153,10 +153,10 @@ const handleDelete=async(id)=>{
       <div className="list-staffs">
         {staffs.map((item, ind) => {
           return (
-            <div className="list-staff">
+            <div className="list-staff" key={ind}>
               <div>{item.name}</div>
               <div className="list-staff-btns">
-                <div onClick={()=>handleOnEditBtn()} style={{ cursor: "pointer" }}>
+                <div onClick={()=>handleOnEditBtn(item)} style={{ cursor: "pointer" }}>
                   <EditIcon />
                 </div>
                 <div onClick={()=>handleDelete(item._id)} style={{ cursor: "pointer" }}>

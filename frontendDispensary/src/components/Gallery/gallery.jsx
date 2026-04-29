@@ -34,7 +34,7 @@ const Gallery = (props) => {
         data.map((item,index)=>{
           return (
             <div key={index} className="gallary-home-image-block">
-        <img src = {item.link} className = 'gallary-home-image'/>
+            <img src = {item.link} className = 'gallary-home-image'/>
       </div>
           )
         })

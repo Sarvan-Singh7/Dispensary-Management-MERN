@@ -6,31 +6,31 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 const Staff = (props) => {
   const staffHeader = ["Name", "Designation", "Email Id", "Contact No."];
-  const [rowData,setRowData]=useState([])
+  const [rowData, setRowData] = useState([])
 
-  const getFormattedData = (data)=>{
-    let newarr=data.map((item)=>{
-      return {name:item.name,designation:item.designation,email:item.email,contactNo:item.mobileNo}
+  const getFormattedData = (data) => {
+    let newarr = data.map((item) => {
+      return { name: item.name, designation: item.designation, email: item.email, contactNo: item.mobileNo }
     })
     setRowData(newarr);
   }
-  const fetchData = async()=>{
+  const fetchData = async () => {
     props.showLoader();
-    await axios.get("http://localhost:4000/api/auth/get-staff").then((respnse)=>{
+    await axios.get("http://localhost:4000/api/auth/get-staff").then((respnse) => {
       // console.log(respnse);
       getFormattedData(respnse.data.staffs);
-    }).catch(err=>{
+    }).catch(err => {
       console.log(err);
-    }).finally(()=>{
+    }).finally(() => {
       props.hideLoader();
     })
   }
-  useEffect(()=>{
+  useEffect(() => {
     fetchData();
-  },[])
+  }, [])
   return (
-    <div className = 'staff'>
-      <TableComp header = {staffHeader} data = {rowData}/>
+    <div className='staff'>
+      <TableComp header={staffHeader} data={rowData} />
 
     </div>
   )

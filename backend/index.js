@@ -7,8 +7,8 @@ app.use(express.json());
 app.use(cookieparser());
 
 
-app.use(cors({
-  credentials: true,
+app.use(cors({  ///cors is used to allow the frontend to access the backend api, because by default it is not allowed due to security reasons, so we are allowing it by using cors middleware
+  credentials: true,  //allow frontend to send cookie to Backend
   origin:"http://localhost:5173"
 }));
 

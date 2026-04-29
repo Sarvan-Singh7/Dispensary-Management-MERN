@@ -8,7 +8,7 @@ const Facility = (props) => {
     props.showLoader();
     await axios.get("http://localhost:4000/api/facility/get").then((response)=>{
       // console.log(response);
-      setData(response.data.facility);
+      setData(response.data.facility);  ///map to data array of facility and then display it in the UI
     }).catch(err=>{
       console.log(err);
     }).finally(()=>{

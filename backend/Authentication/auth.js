@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
 
-
 //importing this ..
 const userModel = require("../Models/user");
 
@@ -14,9 +13,11 @@ exports.studentAuth = async(req, res, next)=> {
       next();
     }
    }
+
    catch(err){
       res.status(401).json({error :"Something Went Wrong in Authentication"});
    }
+   
 }
 
 
