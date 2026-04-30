@@ -184,6 +184,8 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
 - [x] Backend — Node.js + Express server setup
 - [x] MongoDB Atlas integration with Mongoose
 - [x] JWT authentication implementation
+- [x] Public API for global college events & notifications
+- [x] Authentication middleware fixes for unauthenticated requests
 
 ### 🔄 In Progress
 - [ ] REST API — Student, Staff, Admin routes

@@ -2,16 +2,16 @@ import React from 'react'
 import './header.css'
 import { useState, useEffect } from 'react'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { Link, useLocation ,useNavigate } from 'react-router-dom';//link tag used to navigate betweeen different pages and also change URL
+import { Link, useLocation, useNavigate } from 'react-router-dom';//link tag used to navigate betweeen different pages and also change URL
 import axios from 'axios';
-import {toast, ToastContainer} from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 const Header = (props) => {
   const location = useLocation() //hook to get current location
   const [eventpopup, setEventpopup] = useState(false);
   const [helpline, setHelpline] = useState(false);
-  const navigate=useNavigate();
-  const [events, setEvents]=useState([]);
-  
+  const navigate = useNavigate();
+  const [events, setEvents] = useState([]);
+
   const handleOpenPopup = (popup) => {
     if (popup === "event") {
       setEventpopup(true);
@@ -20,21 +20,21 @@ const Header = (props) => {
     }
   }
 
-  const fetchEvents=async()=>{
-await axios.get(`http://localhost:4000/api/notification/get`).then((response)=>{
+  const fetchEvents = async () => {
+    await axios.get(`http://localhost:4000/api/notification/get`).then((response) => {
 
-  setEvents(response.data.notifications);
-  }).catch(err=>{
-    console.log(err);
-  })
-  
-}
+      setEvents(response.data.notifications);
+    }).catch(err => {
+      console.log(err);
+    })
 
-  useEffect(()=>{
-    if(eventpopup){
+  }
+
+  useEffect(() => {
+    if (eventpopup) {
       fetchEvents()
     }
-  },[eventpopup])
+  }, [eventpopup])
   const handleClosePopup = (popup) => {
     if (popup === "event") {
       setEventpopup(false);
@@ -43,20 +43,20 @@ await axios.get(`http://localhost:4000/api/notification/get`).then((response)=>{
     }
   }
 
-  const handleLogin=()=>{
+  const handleLogin = () => {
     navigate('/login')
   }
-  const handleLogout=async()=>{
+  const handleLogout = async () => {
     props.showLoader();
-    await axios.post('http://localhost:4000/api/auth/logout',{},{withCredentials:true}).then((response)=>{
+    await axios.post('http://localhost:4000/api/auth/logout', {}, { withCredentials: true }).then((response) => {
       // console.log(response);
       props.handleLogin(false);
       localStorage.clear();
       navigate('/');
-    }).catch(err=>{
+    }).catch(err => {
       // console.log(err);
       toast.error(err?.response?.data?.error)
-    }).finally(()=>{
+    }).finally(() => {
       props.hideLoader();
     })
   }
@@ -64,7 +64,7 @@ await axios.get(`http://localhost:4000/api/notification/get`).then((response)=>{
   return (
     <div className='header'>
       <div className='header-college-details'>
-        <div className='header-college-details-left' onClick={() => window.location.reload()} style={{cursor : "pointer"}}>
+        <div className='header-college-details-left' onClick={() => window.location.reload()} style={{ cursor: "pointer" }}>
           <img className='header-college-details-left-logo' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUIP-NCWROmZ9KZX2cuZNYUZZL1GlvG6cPc3UDIa2k9g&s' alt='colegeLogo' />
           <div>
             <div className='header-college-details-name'>ਚਿਤਕਾਰਾ ਯੂਨੀਵਰਸਿਟੀ,</div>
@@ -89,7 +89,7 @@ await axios.get(`http://localhost:4000/api/notification/get`).then((response)=>{
         <Link to={'/'} className={`navbar-links ${location.pathname === '/' ? 'active-link' : null}`}>
           Home
         </Link>
-        <div onClick={props.isLogin?handleLogout:handleLogin} className={`navbar-links ${location.pathname === '/login' ? 'active-link' : null}`}>
+        <div onClick={props.isLogin ? handleLogout : handleLogin} className={`navbar-links ${location.pathname === '/login' ? 'active-link' : null}`}>
           {props.isLogin ? "Logout" : "Login"}
         </div>
         <Link to={'/stock'} className={`navbar-links ${location.pathname === '/stock' ? 'active-link' : null}`}>
@@ -100,13 +100,13 @@ await axios.get(`http://localhost:4000/api/notification/get`).then((response)=>{
           {
             eventpopup && (<div className='navbar-dropdown-popup event-pop'>
               {
-                events.map((item,index)=>{
+                events.map((item, index) => {
                   return (
                     <div className='popup-notification'>{item.title}</div>
                   )
                 })
               }
-              
+
             </div>)
           }
 

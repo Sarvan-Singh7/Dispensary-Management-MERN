@@ -16,7 +16,7 @@ const Staff = (props) => {
   }
   const fetchData = async () => {
     props.showLoader();
-    await axios.get("http://localhost:4000/api/auth/get-staff").then((respnse) => {
+    await axios.get("http://localhost:4000/api/auth/get-staff").then((respnse) => {   
       // console.log(respnse);
       getFormattedData(respnse.data.staffs);
     }).catch(err => {

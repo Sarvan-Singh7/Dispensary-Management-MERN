@@ -11,6 +11,8 @@ exports.studentAuth = async(req, res, next)=> {
       const  decode = jwt.verify(token, process.env.JWT_SECRET);
       req.user = await userModel.findById(decode.userId).select("-password"); // Fetch user details from DB and attach to req object, excluding password
       next();
+    } else {
+      return res.status(401).json({error: "Authentication required"});
     }
    }
 
@@ -34,6 +36,8 @@ exports.adminFacultyAuth = async(req, res, next)=> {
       }
 
       next();
+    } else {
+      return res.status(401).json({error: "Authentication required"});
     }
 
    }
