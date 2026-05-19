@@ -240,7 +240,7 @@ const user = new UserModels({...body, password : updatedPass});
 await user.save();
     const mailOptions = {
       from: process.env.EMAIL,
-      to: email,
+      to: body.email,
       subject: 'Password for dispensary system',
       text: `Hi, your password is  ${token} whos email id is ${body.email} and roll number is ${body.roll} . Please change your password after login.`
     };

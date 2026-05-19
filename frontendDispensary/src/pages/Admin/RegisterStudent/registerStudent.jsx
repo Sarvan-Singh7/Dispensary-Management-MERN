@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 import SearchBox from '../../../components/SearchBox/searchBox';
 import Modal from '../../../components/Modal/modal';
 import Report from './Report/report';  ///used to add Report By Admin for User
-const RegisterStudent = () => {
+import {toast,ToastContainer} from 'react-toastify'
+import axios from 'axios';
+const RegisterStudent = (props) => {
 
     const [searchStudent, setSearchStudent] = useState("");
-    const [reportModal, setReportModal] = useState("");
+    const [reportModal, setReportModal] = useState(false);
 
     const [studentDetail, setStudentDetail] = useState({ _id: "", email: "", name: "", roll: "", mobileNo: "", fatherName: "", fatherMobile: "", address: "", previous_health: "", age: "", bloodGroup: "" })
     const handleOnChangeInputField = (event, key) => {
@@ -17,19 +19,65 @@ const RegisterStudent = () => {
     const openCloseModal = () => {   /////By this Close and Open ho jata hai
         setReportModal(prev => !prev)
     }
+
     const handleOnChange = (value) => {
         setSearchStudent(value)
     }
     const handleSubmit = (e) => {
         e.preventDefault()
     }
+    const handleSearch= async()=>{
+       if(searchStudent.trim().length===0) return toast.error("Please enter Roll No to search")
+        props.showLoader()
+    await axios.get(`http://localhost:4000/api/auth/get-student-by-roll/${searchStudent}`,{withCredentials:true}).then(res=>{
+console.log(res)
+toast.success(res.data.message)
+
+setStudentDetail({...studentDetail,...res.data.student})
+    }).catch(err=>{
+        setStudentDetail({ _id: "", email: "", name: "", roll: "", mobileNo: "", fatherName: "", fatherMobile: "", address: "", previous_health: "", age: "", bloodGroup: "" })
+            toast.error(err?.response?.data?.error);
+    }).finally(()=>{
+        props.hideLoader()
+    })
+     }
+
+     const handleUpdateFunc=async()=>{
+        if(studentDetail.name.trim().length===0 || studentDetail.email.trim().length===0 || studentDetail.roll.trim().length===0 || studentDetail.mobileNo.trim().length===0) return toast.error("Name, Email, Roll No and Mobile No are required fields")
+        props.showLoader()
+const {_id,uodateAt,...student}= {...studentDetail}
+await axios.put(`http://localhost:4000/api/auth/update-student/${_id}`,student,{withCredentials:true}).then(res=>{
+toast.success(res.data.message)
+}).catch(err=>{
+    toast.error(err?.response?.data?.error);
+}).finally(()=>{
+    props.hideLoader()
+})
+     }
+
+
+     const resgisterStudent=async()=>{
+if(studentDetail.name.trim().length===0 || studentDetail.email.trim().length===0 || studentDetail.roll.trim().length===0 || studentDetail.mobileNo.trim().length===0) return toast.error("Name, Email, Roll No and Mobile No are required fields")
+props.showLoader()
+await axios.post("http://localhost:4000/api/auth/registerStudentByStaff",studentDetail,{withCredentials:true}).then(res=>{
+toast.success(res.data.message)
+}).catch(err=>{
+setStudentDetail({ _id: "", email: "", name: "", roll: "", mobileNo: "", fatherName: "", fatherMobile: "", address: "", previous_health: "", age: "", bloodGroup: "" })
+toast.error(err?.response?.data?.error);
+}).finally(()=>{
+    props.hideLoader()
+})
+     }
+
+
+
 
     return (
         <div className="register-student">
             {/* to do back to dashboard or undo */}
             <div className="go-back"><Link to={'/admin/dashboard'}><ArrowBackIcon /> Back to Dashboard</Link></div>
 
-            <SearchBox placeholder={"Search By Roll No"} value={searchStudent} onChange={handleOnChange} />
+            <SearchBox handleClick={handleSearch} placeholder={"Search By Roll No"} value={searchStudent} onChange={handleOnChange} />
 
             <div className="register-form-block">
                 <div className="register-form-header">Register Student</div>
@@ -40,7 +88,7 @@ const RegisterStudent = () => {
 
                         </div>
                         <div className="register-input-box">
-                            <input value={studentDetail.email} onChange={(event) => { handleOnChangeInputField(event, 'email') }} type="email" className="input-box-register" placeholder='Email' />
+                            <input disabled={studentDetail?._id} value={studentDetail.email} onChange={(event) => { handleOnChangeInputField(event, 'email') }} type="email" className="input-box-register" placeholder='Email' />
 
                         </div>
                         <div className="register-input-box">
@@ -75,15 +123,18 @@ const RegisterStudent = () => {
 
 
                     </div>
-                    <button type='submit' className="form-btn reg-btn">Register</button>
-
+                   {
+                    studentDetail?._id? 
                     <div className="block-divs">
-                        <button type='submit' className="form-btn reg-btn">Update</button>
-                        <button type='submit' className="form-btn reg-btn" onClick={openCloseModal}>Report</button>
+                        <button onClick={handleUpdateFunc} type='submit' className="form-btn reg-btn">Update</button>
+                        <button  type='submit' className="form-btn reg-btn" onClick={openCloseModal}>Report</button>
                     </div>
+                    :  <button onClick={resgisterStudent}  type='submit' className="form-btn reg-btn">Register</button>
+                   }
                 </form>
             </div>
-            {reportModal && <Modal header="Report" handleClose={openCloseModal} children={<Report />} />}
+            {reportModal && <Modal header="Report" handleClose={openCloseModal} children={<Report studentDetail={studentDetail}  handleCloseModel={openCloseModal} />} />}
+            <ToastContainer />
         </div>
     )
 }

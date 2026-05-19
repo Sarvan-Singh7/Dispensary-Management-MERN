@@ -39,8 +39,4 @@ router.post("/logout", Authentication.studentAuth, UserController.logout);
 
 
 
-
-
-
-
 module.exports = router;
