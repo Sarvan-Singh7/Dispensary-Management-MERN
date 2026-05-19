@@ -70,7 +70,7 @@ const Home = (props) => {
          {/* Left part of the page with different options mentioned */}
           <div className = 'home-left-page'>
             {
-              userInfo?.role==="admin" && <Link to={'/admin/dashboard'} className = {`home-left-option`} >
+              userInfo && userInfo?.role !=="student" && <Link to={'/admin/dashboard'} className = {`home-left-option`} >
                     <HomeIcon/> DashBoard
                </Link>
             }

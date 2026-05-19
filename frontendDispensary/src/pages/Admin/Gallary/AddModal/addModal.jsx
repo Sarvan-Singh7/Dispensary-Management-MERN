@@ -3,6 +3,7 @@ import './addModal.css'
 import axios from 'axios';///used for API call
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import { toast, ToastContainer } from 'react-toastify';
 //Axios helps your website talk to the backend or API.
 const AddModal = (props) => {
   const [image, setImage] = useState(null);
@@ -25,6 +26,13 @@ const AddModal = (props) => {
       setLoader(false);//at last make loader false
     }
   }
+  const handleSubmit = async () => {
+    await axios.post('http://localhost:4000/api/gallary/add', { link: image }, { withCredentials: true }).then((resp) => {
+      window.location.reload();
+    }).catch((err) => {
+      toast.error(err?.response?.data?.error);
+    });
+  }
   return (
     <div className='addModal'>
       <div className='addModal-card'>
@@ -44,9 +52,10 @@ const AddModal = (props) => {
           image && <img src={image} style={{ marginTop: 20, width: "200px", height: "200px" }} />
         }
         {
-          image && <div className='cancel-modal-btn'>Submit</div>
+          image && <div className='cancel-modal-btn' onClick={handleSubmit}>Submit</div>
         }
       </div>
+      <ToastContainer />
     </div>
   )
 }
