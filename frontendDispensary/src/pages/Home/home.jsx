@@ -12,12 +12,13 @@ import Staff from '../../components/Staffs/staff'
 import Facility from '../../components/Facilities/facility'
 import NearByHospitals from '../../components/NearByHospitals/nearByHospital'
 import Gallery from '../../components/Gallery/gallery'
+import { Link } from 'react-router-dom';
 
 const Home = (props) => {
      
      const [page, setPage] = useState('aboutUs');//aboutUs, staff, facilities, nearbyHospitals, gallery ka selection
      const [rightSideHeader, setRightSideHeader] = useState('About Us');//aboutus etc ka heading that is in blue color
-    
+    let userInfo=localStorage.getItem("userInfo")?JSON.parse(localStorage.getItem("userInfo")):null;
     const handleChangeTab = (pagename) => {//so that when we click on about us, staff, facilities, nearbyHospitals, gallery then the right side header and page will change accordingly
         setPage(pagename);
         switch (pagename) {
@@ -68,6 +69,12 @@ const Home = (props) => {
        <div className = 'home-block'>
          {/* Left part of the page with different options mentioned */}
           <div className = 'home-left-page'>
+            {
+              userInfo?.role==="admin" && <Link to={'/admin/dashboard'} className = {`home-left-option`} >
+                    <HomeIcon/> DashBoard
+               </Link>
+            }
+            
                <div className = {`home-left-option ${page === 'About' ? 'active-opt' : null}`} onClick = {() => handleChangeTab('About')}>
                     <HomeIcon/> About Us
                </div>
