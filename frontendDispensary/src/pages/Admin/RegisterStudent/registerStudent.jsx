@@ -26,6 +26,8 @@ const RegisterStudent = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
     }
+
+    //serach by rool no and get detials
     const handleSearch= async()=>{
        if(searchStudent.trim().length===0) return toast.error("Please enter Roll No to search")
         props.showLoader()
@@ -42,6 +44,7 @@ setStudentDetail({...studentDetail,...res.data.student})
     })
      }
 
+      //we update data in this
      const handleUpdateFunc=async()=>{
         if(studentDetail.name.trim().length===0 || studentDetail.email.trim().length===0 || studentDetail.roll.trim().length===0 || studentDetail.mobileNo.trim().length===0) return toast.error("Name, Email, Roll No and Mobile No are required fields")
         props.showLoader()
@@ -55,7 +58,7 @@ toast.success(res.data.message)
 })
      }
 
-
+ //register student if not 
      const resgisterStudent=async()=>{
 if(studentDetail.name.trim().length===0 || studentDetail.email.trim().length===0 || studentDetail.roll.trim().length===0 || studentDetail.mobileNo.trim().length===0) return toast.error("Name, Email, Roll No and Mobile No are required fields")
 props.showLoader()
