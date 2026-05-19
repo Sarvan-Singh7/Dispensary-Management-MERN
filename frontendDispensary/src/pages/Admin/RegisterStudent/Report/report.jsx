@@ -15,6 +15,8 @@ const Report = (props) => {
         setSearchmedicineName(value)
     }
 
+
+    //fetch data from db 
       const fetchData=async()=>{
        
         await axios.get(`http://localhost:4000/api/medicine/search-by-name?name=${searchMedicineName}`).then((resp)=>{
@@ -29,10 +31,14 @@ const Report = (props) => {
         })
     }
 
+
+    //fetch data from db ,dynamic when typed
     useEffect(()=>{
         fetchData();
     },[searchMedicineName])
 
+
+    //going to add medicine in the list of selected medicine when we click on the medicine from dropdown
   const addMedicine= (item)=>{
     let exist=0;
     selectedMedicine.map((it)=>{
@@ -46,6 +52,8 @@ const Report = (props) => {
 setDropDown(false)
   }
 
+  //handle on change of input field of required quantity
+  //check length should not be more than available stock quantity, if it is then show error and do not update the value of required quantity
   const onChangeHandle=(event,ind)=>{
     const arr=selectedMedicine.map((item,index)=>{
 if( index===ind){
@@ -60,13 +68,13 @@ return {...item}
    setSelectedMedicine(arr)
   }
 
-
+//will delete from the report of particular student
 const handleDelete = (id) => {
     let arr = selectedMedicine.filter((it) => it._id !== id);
     setSelectedMedicine(arr);
 }
 
-
+//check if any input field is empty or not
   const checkInputInValid=()=>{
     let invalid= false;
     selectedMedicine.map((item) => {
