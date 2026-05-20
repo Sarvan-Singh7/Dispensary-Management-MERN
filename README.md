@@ -186,13 +186,12 @@ Built with **three separate role-based portals** for Admin, Staff, and Students,
 - [x] JWT authentication implementation
 - [x] Public API for global college events & notifications
 - [x] Authentication middleware fixes for unauthenticated requests
+- [X] REST API — Student, Staff, Admin routes
+- [X] Student health records module
+- [X] Admin analytics dashboard
+- [X] Email notifications for appointment updates
 
 ### 🔄 In Progress
-- [ ] REST API — Student, Staff, Admin routes
-- [ ] Student health records module
-- [ ] Admin analytics dashboard
-- [ ] Email notifications for appointment updates
-- [ ] Fully responsive mobile UI
 - [ ] Deployment — Backend on Render, Frontend on Netlify
 - [ ] Docker containerization
 
