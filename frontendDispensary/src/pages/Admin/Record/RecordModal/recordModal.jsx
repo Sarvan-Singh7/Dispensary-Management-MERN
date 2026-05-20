@@ -1,18 +1,19 @@
 import React from 'react'
 import './recordModal.css'
-export const RecordModal = () => {
+export const RecordModal = (props) => {
+    console.log(props);
   return (
     <div className='record-modal'>
         <div className='student-modal-report'>
-            <div>Danish</div>
-            <div>Danish@gmail.com</div>
-            <div>2410991854</div>
+            <div>{props?.selectedHistory?.student?.name}</div>
+            <div>{props?.selectedHistory?.student?.email}</div>
+            <div>{props?.selectedHistory?.student?.phone}</div>
         </div>
 
         <div className='student-details-scroll'>
             <div className='student-modal-detail'>
                 <div className='student-modal-header'>
-                    14-01-2026
+                    {props?.selectedHistory?.createdAt.slice(0,10).split("-").reverse().join("-") }
                 </div>
 
                 <div className='student-modal-body-student'>
@@ -22,13 +23,20 @@ export const RecordModal = () => {
                     </div>
 
                     <div className='student-modal-body-item'>
-                        <div className='student-item-modal'>
-                            <div>Paracetamol</div>
-                            <div>20</div>
-                        </div>
+                        {
+                            props.selectedHistory?.medicines.map((item,index)=>{
+                                return (
+                                    <div key={index} className='student-item-modal'>
+                                        <div>{item?.name}</div>
+                                        <div>{item?.requiredQuantity}</div>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
   )

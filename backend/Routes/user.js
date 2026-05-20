@@ -35,7 +35,7 @@ router.delete("/delete-staff/:id",Authentication.adminFacultyAuth,UserController
 
 
 //this route is for all
-router.post("/logout", Authentication.studentAuth, UserController.logout);
+router.post("/logout", UserController.logout);
 
 
 

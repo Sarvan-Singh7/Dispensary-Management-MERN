@@ -50,13 +50,13 @@ const Header = (props) => {
     props.showLoader();
     await axios.post('http://localhost:4000/api/auth/logout', {}, { withCredentials: true }).then((response) => {
       // console.log(response);
-      props.handleLogin(false);
-      localStorage.clear();
-      navigate('/');
     }).catch(err => {
       // console.log(err);
       toast.error(err?.response?.data?.error)
     }).finally(() => {
+      props.handleLogin(false);
+      localStorage.clear();
+      navigate('/');
       props.hideLoader();
     })
   }
