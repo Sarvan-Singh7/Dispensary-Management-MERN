@@ -1,14 +1,12 @@
 import React from 'react'
 
-const StudentModal = () => {
+const StudentModal = ({ selectedHistory }) => {
     return (
         <div className='record-modal'>
-
-
             <div className='student-details-scroll'>
                 <div className='student-modal-detail'>
                     <div className='student-modal-header'>
-                        14-01-2026
+                        {selectedHistory?.createdAt?.slice(0, 10).split("-").reverse().join("-")}
                     </div>
 
                     <div className='student-modal-body-student'>
@@ -18,10 +16,12 @@ const StudentModal = () => {
                         </div>
 
                         <div className='student-modal-body-item'>
-                            <div className='student-item-modal'>
-                                <div>Paracetamol</div>
-                                <div>20</div>
-                            </div>
+                            {selectedHistory?.medicines?.map((med, idx) => (
+                                <div key={idx} className='student-item-modal'>
+                                    <div>{med?.name}</div>
+                                    <div>{med?.requiredQuantity}</div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

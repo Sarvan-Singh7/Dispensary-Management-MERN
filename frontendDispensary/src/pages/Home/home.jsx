@@ -74,6 +74,11 @@ const Home = (props) => {
                     <HomeIcon/> DashBoard
                </Link>
             }
+            {
+              userInfo && userInfo?.role ==="student" && <Link to={`/student/${userInfo._id}`} className = {`home-left-option`} >
+                    <HomeIcon/> Profile
+               </Link>
+            }
             
                <div className = {`home-left-option ${page === 'About' ? 'active-opt' : null}`} onClick = {() => handleChangeTab('About')}>
                     <HomeIcon/> About Us
