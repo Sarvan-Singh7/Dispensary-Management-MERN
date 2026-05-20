@@ -16,6 +16,7 @@ const UserSchema = new mongoose.Schema({
     },
     roll:{
         type:String,
+        unique:true,
     },
     mobileNo:{
         type:String,

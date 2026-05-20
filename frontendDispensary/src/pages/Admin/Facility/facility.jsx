@@ -98,7 +98,7 @@ const Facility = (props) => {
 
       {model && (
         <Modal
-          headers="Add Facility"
+          headers={clickedItem ? "Edit Facility" : "Add Facility"}
           handleClose={onOFModal}
           children={<FacilityModal clickedItem={clickedItem} />}
         />

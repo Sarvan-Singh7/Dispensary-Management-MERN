@@ -56,7 +56,7 @@ const AdminDashboard = (props) => {
           Records
         </Link>
         <Link to={"/admin/facility"} className="admin-dashboard-card">
-          Facilites
+          Facilities
         </Link>
         <Link to={"/admin/nearByHospital"} className="admin-dashboard-card">
           Near By Hospitals

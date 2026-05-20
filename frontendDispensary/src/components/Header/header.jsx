@@ -126,7 +126,7 @@ const Header = (props) => {
 
       {
         location.pathname === '/' && <div className='header-banner'>
-          <img src={"https://mindtrip.ai/attractions/d886/b971/07b6/6547/069b/007f/8709/6725"} className='header-banner-image' />
+          <img src={"https://www.collegebatch.com/static/clg-gallery/chitkara-university-rajpura-patiala-231397.webp"} className='header-banner-image' />
         </div>
       }
       <ToastContainer />
