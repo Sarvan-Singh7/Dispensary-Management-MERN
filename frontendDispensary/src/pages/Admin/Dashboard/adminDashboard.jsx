@@ -22,7 +22,9 @@ const AdminDashboard = (props) => {
   return (
     <div className="adminDashboard">
       <div className="welcome-header">
-        <div className="welcome-admin"> Welcome to Admin Panel</div>
+        <div className="welcome-admin">
+          Welcome to {isAdmin ? "Admin" : "Staff"} Panel
+        </div>
         <div className="welcome-admin-right-side">
           {isAdmin && (
             <div
