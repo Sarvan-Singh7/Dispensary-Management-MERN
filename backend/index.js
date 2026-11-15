@@ -9,7 +9,7 @@ app.use(cookieparser());
 
 app.use(cors({  ///cors is used to allow the frontend to access the backend api, because by default it is not allowed due to security reasons, so we are allowing it by using cors middleware
   credentials: true,  //allow frontend to send cookie to Backend
-  origin:"http://localhost:5173"
+  origin: ["http://localhost:5173", "https://dispensary-frontend.onrender.com"]
 }));
 
 require('./connection');    //by this line we are connecting to MongoDb Cloud, through connection.js file
