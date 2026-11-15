@@ -8,7 +8,7 @@ const nodemailer = require("nodemailer");
 const cookieOptions = {   // Options for cookie settings
   httpOnly : true,
   secure : true, // Set to true in production when using HTTPS
-  sameSite : "lax", // Adjust as needed (e.g., "strict" or "none")
+  sameSite : "none", // Adjust as needed (e.g., "strict" or "none")
 }
 
 const transporter = nodemailer.createTransport({
