@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import './facilitymodal.css'
+import './facilityModal.css'
 import {toast ,ToastContainer} from 'react-toastify'
 import axios from 'axios'
 const FacilityModal = (props) => {
