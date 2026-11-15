@@ -14,7 +14,7 @@ const NearByModal = (props) => {
         }
     }, [])
     const updateFunc=async()=>{
-        await axios.put(`http://localhost:4000/api/hospital/update/${props.clickedItem._id}`,inputField,{withCredentials:true}).then((resp)=>{
+        await axios.put(`/api/hospital/update/${props.clickedItem._id}`,inputField,{withCredentials:true}).then((resp)=>{
             window.location.reload();
         }).catch((err)=>{
             toast.error(err?.response?.data?.error);
@@ -31,7 +31,7 @@ const NearByModal = (props) => {
         if (inputField.name.trim().length === 0 || inputField.address.trim().length === 0 || inputField.contact.trim().length === 0) {
             return toast.error("Please fill all the fields")
         }
-        await axios.post('http://localhost:4000/api/hospital/add', inputField, { withCredentials: true }).then((resp) => {
+        await axios.post('/api/hospital/add', inputField, { withCredentials: true }).then((resp) => {
             window.location.reload();
         }).catch((err) => {
             toast.error(err?.response?.data?.error);

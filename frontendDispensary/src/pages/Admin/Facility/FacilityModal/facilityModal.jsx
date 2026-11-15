@@ -13,7 +13,7 @@ const FacilityModal = (props) => {
         }
     },[])
     const updateFacility=async()=>{
-        await axios.put(`http://localhost:4000/api/facility/update/${props.clickedItem._id}`,inputField,{withCredentials:true}).then((resp)=>{
+        await axios.put(`/api/facility/update/${props.clickedItem._id}`,inputField,{withCredentials:true}).then((resp)=>{
             window.location.reload();
         }).catch((err)=>{
             toast.error(err?.response?.data?.error);
@@ -28,7 +28,7 @@ const FacilityModal = (props) => {
         if(props.clickedItem){
             return updateFacility();
         }
-        await axios.post('http://localhost:4000/api/facility/add',inputField,{withCredentials:true}).then((resp)=>{
+        await axios.post('/api/facility/add',inputField,{withCredentials:true}).then((resp)=>{
             window.location.reload();
         }).catch((err)=>{
             toast.error(err?.response?.data?.error);

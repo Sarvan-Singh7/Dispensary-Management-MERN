@@ -25,7 +25,7 @@ export const ManageMedicine = (props) => {
     }
     const fetchData=async()=>{
         props.showLoader();
-        await axios.get(`http://localhost:4000/api/medicine/search-by-name?name=${medicineSearch}`).then((resp)=>{
+        await axios.get(`/api/medicine/search-by-name?name=${medicineSearch}`).then((resp)=>{
             // console.log(resp);
             setData(resp.data.medicines);
         }).catch((err)=>{
@@ -44,7 +44,7 @@ export const ManageMedicine = (props) => {
     }
     const handleDelete=async(id)=>{
         props.showLoader();
-        await axios.delete(`http://localhost:4000/api/medicine/delete/${id}`,{withCredentials:true}).then((resp)=>{
+        await axios.delete(`/api/medicine/delete/${id}`,{withCredentials:true}).then((resp)=>{
             filterOutMedicine(id);
             toast.success("Medicine Deleted Successfully");
         }).catch((err)=>{

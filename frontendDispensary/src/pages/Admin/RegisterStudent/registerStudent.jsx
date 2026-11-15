@@ -31,7 +31,7 @@ const RegisterStudent = (props) => {
     const handleSearch= async()=>{
        if(searchStudent.trim().length===0) return toast.error("Please enter Roll No to search")
         props.showLoader()
-    await axios.get(`http://localhost:4000/api/auth/get-student-by-roll/${searchStudent}`,{withCredentials:true}).then(res=>{
+    await axios.get(`/api/auth/get-student-by-roll/${searchStudent}`,{withCredentials:true}).then(res=>{
 console.log(res)
 toast.success(res.data.message)
 
@@ -49,7 +49,7 @@ setStudentDetail({...studentDetail,...res.data.student})
         if(studentDetail.name.trim().length===0 || studentDetail.email.trim().length===0 || studentDetail.roll.trim().length===0 || studentDetail.mobileNo.trim().length===0) return toast.error("Name, Email, Roll No and Mobile No are required fields")
         props.showLoader()
 const {_id,uodateAt,...student}= {...studentDetail}
-await axios.put(`http://localhost:4000/api/auth/update-student/${_id}`,student,{withCredentials:true}).then(res=>{
+await axios.put(`/api/auth/update-student/${_id}`,student,{withCredentials:true}).then(res=>{
 toast.success(res.data.message)
 }).catch(err=>{
     toast.error(err?.response?.data?.error);
@@ -62,7 +62,7 @@ toast.success(res.data.message)
      const resgisterStudent=async()=>{
 if(studentDetail.name.trim().length===0 || studentDetail.email.trim().length===0 || studentDetail.roll.trim().length===0 || studentDetail.mobileNo.trim().length===0) return toast.error("Name, Email, Roll No and Mobile No are required fields")
 props.showLoader()
-await axios.post("http://localhost:4000/api/auth/registerStudentByStaff",studentDetail,{withCredentials:true}).then(res=>{
+await axios.post("/api/auth/registerStudentByStaff",studentDetail,{withCredentials:true}).then(res=>{
 toast.success(res.data.message)
 }).catch(err=>{
 setStudentDetail({ _id: "", email: "", name: "", roll: "", mobileNo: "", fatherName: "", fatherMobile: "", address: "", previous_health: "", age: "", bloodGroup: "" })

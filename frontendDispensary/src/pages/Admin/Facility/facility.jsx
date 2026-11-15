@@ -22,7 +22,7 @@ const Facility = (props) => {
   const fetchData = async () => {
     props.showLoader();
     await axios
-      .get("http://localhost:4000/api/facility/get")
+      .get("/api/facility/get")
       .then((resp) => {
         // console.log(resp);
         setData(resp.data.facility);
@@ -45,7 +45,7 @@ const Facility = (props) => {
   }
   const handleDelete=async(id)=>{
     props.showLoader();
-    await axios.delete(`http://localhost:4000/api/facility/delete/${id}`,{withCredentials:true}).then((resp)=>{
+    await axios.delete(`/api/facility/delete/${id}`,{withCredentials:true}).then((resp)=>{
        filterOutData(id);
     }).catch((err)=>{
       toast.error(err?.response?.data?.error);

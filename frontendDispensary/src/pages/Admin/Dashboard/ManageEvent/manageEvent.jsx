@@ -9,7 +9,7 @@ const ManageEvent = (props) => {
     const [data,setData] = useState([]);
     const fetchData=async()=>{
         props.showLoader();
-        await axios.get('http://localhost:4000/api/notification/get').then((resp)=>{
+        await axios.get('/api/notification/get').then((resp)=>{
             // console.log(resp);
             setData(resp.data.notifications);
         }).catch((err)=>{
@@ -26,7 +26,7 @@ const ManageEvent = (props) => {
         // Handle event submission logic here
         if(title.trim().length===0)return toast.error("Please Enter Title");
         props.showLoader();
-        await axios.post('http://localhost:4000/api/notification/add', {title},{withCredentials:true}).then((resp)=>{
+        await axios.post('/api/notification/add', {title},{withCredentials:true}).then((resp)=>{
             // console.log(resp);
             setData([resp.data.notification,...data]);
             setTitle("");
@@ -43,7 +43,7 @@ const ManageEvent = (props) => {
     }
     const handleDeleteEvent=async(id)=>{
         props.showLoader();
-        await axios.delete(`http://localhost:4000/api/notification/delete/${id}`,{withCredentials:true}).then((resp)=>{
+        await axios.delete(`/api/notification/delete/${id}`,{withCredentials:true}).then((resp)=>{
             // console.log(resp);
             filterOutEvent(id);
             toast.success("Event Deleted Successfully");

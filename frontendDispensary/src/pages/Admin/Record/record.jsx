@@ -41,7 +41,7 @@ export const Record = (props) => {
 
   const fetchData = async () => {
     props.showLoader();
-    await axios.get(`http://localhost:4000/api/history/get-history?month=${selectedMonth}&year=${selectedYear}`, { withCredentials: true }).then((response) => {
+    await axios.get(`/api/history/get-history?month=${selectedMonth}&year=${selectedYear}`, { withCredentials: true }).then((response) => {
       console.log("history data", response.data);
 
       // Filter out duplicate records for the same student on the exact same day
@@ -98,7 +98,7 @@ export const Record = (props) => {
       props.hideLoader();
       return toast.error("Please enter roll number to search");
     }
-    await axios.get(`http://localhost:4000/api/history/get?roll=${studentRoll}`, { withCredentials: true }).then((response) => {
+    await axios.get(`/api/history/get?roll=${studentRoll}`, { withCredentials: true }).then((response) => {
       console.log("history data", response.data);
       setAllRecordModal(true);
       setSelectedAllDetails(response.data.history);

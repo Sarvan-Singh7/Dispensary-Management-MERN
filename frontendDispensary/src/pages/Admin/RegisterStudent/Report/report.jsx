@@ -19,7 +19,7 @@ const Report = (props) => {
     //fetch data from db 
       const fetchData=async()=>{
        
-        await axios.get(`http://localhost:4000/api/medicine/search-by-name?name=${searchMedicineName}`).then((resp)=>{
+        await axios.get(`/api/medicine/search-by-name?name=${searchMedicineName}`).then((resp)=>{
             // console.log(resp);
             setData(resp.data.medicines);
          
@@ -89,7 +89,7 @@ if(item.requiredQuantity.trim().length===0){
 if(selectedMedicine.length===0) return toast.error("please add any medicine")
 if(checkInputInValid()) return toast.error("please enter all the fields")
 
-   await axios.post(`http://localhost:4000/api/history/add`,{roll:props.studentDetail.roll, student: props.studentDetail._id, medicines: selectedMedicine},{withCredentials:true}).then((response)=>{ 
+   await axios.post(`/api/history/add`,{roll:props.studentDetail.roll, student: props.studentDetail._id, medicines: selectedMedicine},{withCredentials:true}).then((response)=>{
     toast.success(response.data.message)
     setTimeout(()=>{
         props.handleCloseModel()

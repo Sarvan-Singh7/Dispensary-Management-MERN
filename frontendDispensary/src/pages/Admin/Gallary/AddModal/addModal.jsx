@@ -27,7 +27,7 @@ const AddModal = (props) => {
     }
   }
   const handleSubmit = async () => {
-    await axios.post('http://localhost:4000/api/gallary/add', { link: image }, { withCredentials: true }).then((resp) => {
+    await axios.post('/api/gallary/add', { link: image }, { withCredentials: true }).then((resp) => {
       window.location.reload();
     }).catch((err) => {
       toast.error(err?.response?.data?.error);

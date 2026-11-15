@@ -6,7 +6,7 @@ const Facility = (props) => {
   const [data,setData] = useState([]);
   const fetchData=async()=>{
     props.showLoader();
-    await axios.get("http://localhost:4000/api/facility/get").then((response)=>{
+    await axios.get("/api/facility/get").then((response)=>{
       // console.log(response);
       setData(response.data.facility);  ///map to data array of facility and then display it in the UI
     }).catch(err=>{

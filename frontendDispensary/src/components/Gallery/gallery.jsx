@@ -9,7 +9,7 @@ const Gallery = (props) => {
    useEffect(()=>{
     props.showLoader();
     const fetchData=async()=>{
-      await axios.get("http://localhost:4000/api/gallary/get").then((response)=>{
+      await axios.get("/api/gallary/get").then((response)=>{
         console.log(response.data)
         setData(response.data.images);
       }).catch(err=>{
