@@ -6,7 +6,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Modal from "../../../components/Modal/modal";
-import FacilityModal from "./FacilityModal/facilitymodal";
+import FacilityModal from "./FacilityModal/facilityModal";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 const Facility = (props) => {
