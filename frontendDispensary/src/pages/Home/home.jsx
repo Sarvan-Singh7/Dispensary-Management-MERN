@@ -66,6 +66,7 @@ const Home = (props) => {
 
   return (
     <div className = 'home'>
+       <h1 className='home-page-title'>Chitkara University Health Center</h1>
        <div className = 'home-block'>
          {/* Left part of the page with different options mentioned */}
           <div className = 'home-left-page'>
@@ -99,9 +100,9 @@ const Home = (props) => {
           {/* Right part of the page with different componenets to render on corrosponding to left one */}
 
           <div className = 'home-right-page'>
-                <div className = 'home-right-header'>
+                <h2 className = 'home-right-header'>
                   {rightSideHeader}
-                </div>
+                </h2>
                 <div className = 'home-right-section'>
                   {getComponent()}
                   {/* ye upar wala function hai jo ki page ke hisab se component return karega, jaise ki agar page about hai to about component return karega, agar staff hai to staff component return karega etc */}

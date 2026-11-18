@@ -65,7 +65,7 @@ const Header = (props) => {
     <div className='header'>
       <div className='header-college-details'>
         <div className='header-college-details-left' onClick={() => window.location.reload()} style={{ cursor: "pointer" }}>
-          <img className='header-college-details-left-logo' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUIP-NCWROmZ9KZX2cuZNYUZZL1GlvG6cPc3UDIa2k9g&s' alt='colegeLogo' />
+          <img className='header-college-details-left-logo' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUIP-NCWROmZ9KZX2cuZNYUZZL1GlvG6cPc3UDIa2k9g&s' alt='Chitkara University logo' />
           <div>
             <div className='header-college-details-name'>ਚਿਤਕਾਰਾ ਯੂਨੀਵਰਸਿਟੀ,</div>
             <div className='header-college-details-place'>ਮੇਡੀਕੋ</div>
@@ -75,10 +75,10 @@ const Header = (props) => {
         </div>
         <div className='header-college-details-right'>
           <div className='header-college-social-media'>
-            <a target='_blank' href='https://www.youtube.com/chitkaraU'><img src='https://cdn-icons-png.flaticon.com/128/3670/3670147.png' className='header-social-media-image' /></a>
-            <a target='_blank' href='https://www.facebook.com/ChitkaraU/'><img src='https://cdn-icons-png.flaticon.com/128/733/733547.png' className='header-social-media-image' /></a>
-            <a target='_blank' href='https://x.com/ChitkaraU'><img src='https://cdn-icons-png.flaticon.com/128/5968/5968830.png' className='header-social-media-image' /></a>
-            <a target='_blank' href='https://www.instagram.com/chitkarau/?hl=en'><img src='https://th.bing.com/th/id/OIP.0wjhvLpjGf_-r-1lqG3QAQHaHw?rs=1&pid=ImgDetMain' className='header-social-media-image' /></a>
+            <a target='_blank' href='https://www.youtube.com/chitkaraU'><img src='https://cdn-icons-png.flaticon.com/128/3670/3670147.png' className='header-social-media-image' alt='YouTube' /></a>
+            <a target='_blank' href='https://www.facebook.com/ChitkaraU/'><img src='https://cdn-icons-png.flaticon.com/128/733/733547.png' className='header-social-media-image' alt='Facebook' /></a>
+            <a target='_blank' href='https://x.com/ChitkaraU'><img src='https://cdn-icons-png.flaticon.com/128/5968/5968830.png' className='header-social-media-image' alt='X' /></a>
+            <a target='_blank' href='https://www.instagram.com/chitkarau/?hl=en'><img src='https://th.bing.com/th/id/OIP.0wjhvLpjGf_-r-1lqG3QAQHaHw?rs=1&pid=ImgDetMain' className='header-social-media-image' alt='Instagram' /></a>
           </div>
           <input type='text' className='header-input-tags' />
         </div>
@@ -126,7 +126,7 @@ const Header = (props) => {
 
       {
         location.pathname === '/' && <div className='header-banner'>
-          <img src={"https://www.collegebatch.com/static/clg-gallery/chitkara-university-rajpura-patiala-231397.webp"} className='header-banner-image' />
+          <img src={"https://www.collegebatch.com/static/clg-gallery/chitkara-university-rajpura-patiala-231397.webp"} className='header-banner-image' alt='Chitkara University campus in Punjab' />
         </div>
       }
       <ToastContainer />
