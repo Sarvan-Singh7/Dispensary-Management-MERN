@@ -1,207 +1,132 @@
-<div align="center">
+# Chitkara University Medico
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&pause=1000&color=00D9FF&center=true&vCenter=true&width=700&lines=🏥+College+Dispensary+Management+System;MERN+Stack+%7C+JWT+Auth+%7C+Role-Based+Access" alt="Typing SVG" />
+A MERN web application for sharing Chitkara University Health Center information and managing dispensary operations. The application includes public health-center information, medicine stock search, and role-based dashboards for administrators, staff, and students.
 
-<br/>
+**Live site:** [dispensary-frontend.onrender.com](https://dispensary-frontend.onrender.com/)
 
-<p>
-  <img src="https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge&logo=github"/>
-  <img src="https://img.shields.io/badge/Stack-MERN-61DAFB?style=for-the-badge&logo=react"/>
-  <img src="https://img.shields.io/badge/Auth-JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/>
-</p>
+**Repository:** [Sarvan-Singh7/Dispensary-Management-MERN](https://github.com/Sarvan-Singh7/Dispensary-Management-MERN)
 
-<p>
-  <a href="https://github.com/Sarvan-Singh7/Dispensary-Management-MERN/stargazers">
-    <img src="https://img.shields.io/github/stars/Sarvan-Singh7/Dispensary-Management-MERN?style=social"/>
-  </a>
-  <a href="https://github.com/Sarvan-Singh7/Dispensary-Management-MERN/forks">
-    <img src="https://img.shields.io/github/forks/Sarvan-Singh7/Dispensary-Management-MERN?style=social"/>
-  </a>
-</p>
+## Features
 
-> **A full-stack healthcare management platform built to digitize college dispensary operations — replacing paper-based systems with a secure, role-based digital solution.**
+- **Public information:** Browse health-center details, staff, facilities, nearby hospitals, gallery images, and event announcements.
+- **Medicine stock:** Search the medicine inventory by name.
+- **Student accounts:** Register and sign in; students can view their health-record history.
+- **Admin and staff dashboards:** Register students and manage records, medicine inventory, facilities, nearby hospitals, gallery content, and events.
+- **Administrator tools:** Manage staff accounts.
+- **Account recovery:** Request a one-time password (OTP) by email to reset a password.
 
-</div>
+## Technology
 
----
+- **Frontend:** React, Vite, React Router, Material UI
+- **Backend:** Node.js, Express
+- **Database:** MongoDB with Mongoose
+- **Authentication and email:** JSON Web Tokens (JWT), Nodemailer
+- **Local containers:** Docker Compose
 
-## 📌 Table of Contents
+## Project structure
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [System Architecture](#-system-architecture)
-- [Role-Based Access](#-role-based-access)
-- [Roadmap](#-roadmap)
-- [Contributors](#-contributors)
-
----
-
-## 🔍 Overview
-
-The **College Dispensary Management System** is a MERN stack web application that streamlines the entire dispensary workflow — from student appointment booking to medicine inventory management.
-
-Built with **three separate role-based portals** for Admin, Staff, and Students, each with unique access levels and capabilities. Authentication is handled via **JSON Web Tokens (JWT)** with OTP-based password reset for enhanced security.
-
-### 🎯 Problem It Solves
-
-| Before (Manual) | After (This System) |
-|---|---|
-| Paper-based prescription records | Digital health records per student |
-| No visibility into medicine stock | Real-time inventory tracking |
-| Manual appointment scheduling | Online appointment booking |
-| No audit trail | Complete activity logs |
-| Password reset via admin only | OTP-based self-service reset |
-
----
-
-## ✨ Features
-
-### 🔐 Authentication & Security
-- JWT-based stateless authentication
-- Role-based access control (Admin / Staff / Student)
-- OTP-based password reset via email
-- Protected routes with auth middleware
-- HTTP-only cookie sessions
-
-### 👨‍💼 Admin Portal
-- Dashboard with system-wide analytics
-- Manage staff accounts (create, update, deactivate)
-- View all student health records
-- Full medicine inventory control (add, edit, delete)
-- Activity logs & reports
-
-### 👩‍⚕️ Staff Portal
-- View and manage daily appointments
-- Issue medicines to students
-- Update student health records
-- Track medicine stock levels
-- Mark appointments as completed
-
-### 🎓 Student Portal
-- Book appointments with dispensary
-- View personal health records & prescriptions
-- Track appointment history
-- OTP-based password reset
-- Profile management
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-<p>
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-</p>
-
-### Backend 
-<p>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white"/>
-</p>
-
-### Security & Tools 
-<p>
-  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Bcrypt-003A70?style=for-the-badge&logo=letsencrypt&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Nodemailer-22B573?style=for-the-badge&logo=gmail&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white"/>
-</p>
-
----
-
-## 🏗️ System Architecture
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                  CLIENT (React + Vite)                  │
-│                                                         │
-│   ┌──────────┐   ┌──────────┐   ┌──────────────────┐   │
-│   │  Admin   │   │  Staff   │   │     Student      │   │
-│   │  Portal  │   │  Portal  │   │      Portal      │   │
-│   └────┬─────┘   └────┬─────┘   └────────┬─────────┘   │
-└────────┼──────────────┼──────────────────┼─────────────┘
-         │              │                  │
-         └──────────────▼──────────────────┘
-                        │  REST API (Axios)
-                        │
-┌───────────────────────▼─────────────────────────────────┐
-│               SERVER (Node.js + Express)                │
-│                                                         │
-│   ┌─────────────────────────────────────────────────┐   │
-│   │              JWT Auth Middleware                │   │
-│   │         (verifies token + role check)           │   │
-│   └──────────────────────┬──────────────────────────┘   │
-│                          │                              │
-│   ┌──────────┐  ┌────────┴──────┐  ┌────────────────┐  │
-│   │   User   │  │  Appointment  │  │    Medicine    │  │
-│   │  Routes  │  │    Routes     │  │    Routes      │  │
-│   └────┬─────┘  └───────┬───────┘  └───────┬────────┘  │
-└────────┼────────────────┼──────────────────┼────────────┘
-         │                │                  │
-┌────────▼────────────────▼──────────────────▼────────────┐
-│                     MongoDB Atlas                        │
-│                                                         │
-│    Users   Appointments   Medicines   HealthRecords     │
-└─────────────────────────────────────────────────────────┘
+```text
+.
+├── backend/                 # Express API, MongoDB models, authentication
+├── frontendDispensary/      # React application
+└── docker-compose.yml        # Local frontend and backend services
 ```
 
----
+## Run locally
 
-## 🔐 Role-Based Access
+### Prerequisites
 
-| Feature | Admin | Staff | Student |
-|---|:---:|:---:|:---:|
-| View All Students | ✅ | ✅ | ❌ |
-| Manage Staff Accounts | ✅ | ❌ | ❌ |
-| Medicine Inventory (Full Control) | ✅ | ❌ | ❌ |
-| Medicine Inventory (View Only) | ✅ | ✅ | ❌ |
-| Book Appointment | ❌ | ❌ | ✅ |
-| Issue Medicine to Student | ❌ | ✅ | ❌ |
-| View Own Health Records | ✅ | ✅ | ✅ |
-| View Activity Logs | ✅ | ❌ | ❌ |
-| OTP Password Reset | ✅ | ✅ | ✅ |
+- Node.js 20.19+ or 22.12+
+- npm
+- A MongoDB database
+- Email credentials for OTP password recovery
 
----
+### 1. Configure the backend
 
-## 🗺️ Roadmap
+Create `backend/.env`:
 
-### ✅ Completed
-- [x] Project setup — React + Vite
-- [x] Role-based UI routing — Admin, Staff, Student portals
-- [x] Authentication pages — Login, Register, Forgot Password
+```dotenv
+PORT=4000
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>/<database>
+EMAIL=<email-address>
+EMAIL_PASSWORD=<email-provider-password>
+JWT_SECRET=<long-random-secret>
+```
 
-- [x] Student appointment booking (UI)
-- [x] Medicine inventory module (UI)
-- [x] Student profile management (UI)
-- [x] Backend — Node.js + Express server setup
-- [x] MongoDB Atlas integration with Mongoose
-- [x] JWT authentication implementation
-- [x] Public API for global college events & notifications
-- [x] Authentication middleware fixes for unauthenticated requests
-- [X] REST API — Student, Staff, Admin routes
-- [X] Student health records module
-- [X] Admin analytics dashboard
-- [X] Email notifications for appointment updates
+Use your own database and email-provider credentials. Keep `.env` files and secrets out of source control.
 
-### 🔄 In Progress
-- [ ] Deployment — Backend on Render, Frontend on Netlify
-- [ ] Docker containerization
+### 2. Start the API
 
----
+From the repository root:
 
-## 👥 Contributors
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+The API listens on `http://localhost:4000` when `PORT=4000`. Its root endpoint (`/`) returns a welcome message.
+
+### 3. Start the frontend
+
+In a second terminal:
+
+```bash
+cd frontendDispensary
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173). During development, the frontend uses `http://localhost:4000` as its default API URL. To use another backend, set `VITE_API_URL` in `frontendDispensary/.env.local`.
+
+## Docker Compose
+
+The Compose file starts the Vite development server and the Express API. Create a repository-root `.env` with the backend values above, then run:
+
+```bash
+docker compose up --build
+```
+
+- Frontend: [http://localhost:5173](http://localhost:5173)
+- Backend: [http://localhost:4000](http://localhost:4000)
+
+Stop the services with `Ctrl+C`; run `docker compose down` to remove the containers.
+
+## API areas
+
+| Prefix | Purpose |
+| --- | --- |
+| `/api/auth` | Registration, login, logout, OTP password recovery, student and staff account operations |
+| `/api/medicine` | Medicine inventory and name search |
+| `/api/history` | Student health-record history and administrative history views |
+| `/api/facility` | Health-center facilities |
+| `/api/hospital` | Nearby hospitals |
+| `/api/gallary` | Gallery images |
+| `/api/notification` | Event announcements |
+
+Most management operations require an authenticated administrator or staff account. Student history is restricted to authenticated students.
+
+## Build and lint
+
+Run frontend checks from `frontendDispensary/`:
+
+```bash
+npm run build
+npm run lint
+```
+
+The backend package does not currently have an automated test suite.
+
+## Deployment notes
+
+- Set `VITE_API_URL` to the deployed backend URL when building the frontend for production.
+- The backend currently allows requests from `http://localhost:5173` and `https://dispensary-frontend.onrender.com`. Update the CORS allowlist in `backend/index.js` if deploying the frontend to another origin.
+- Set `PORT`, `MONGODB_URI`, `EMAIL`, `EMAIL_PASSWORD`, and `JWT_SECRET` in the backend hosting provider's environment settings.
+- Use synthetic data for evaluation. Before using real health information, review the application's security, privacy, and regulatory requirements.
+
+## Contributors
 
 <div align="center">
-
-Thanks to these amazing people who built this project together 🙌
 
 <table align="center">
   <tr>
@@ -232,24 +157,4 @@ Thanks to these amazing people who built this project together 🙌
   </tr>
 </table>
 
-*Want to contribute? Feel free to open a PR!*
-
-</div>
-
----
-
-## 🤝 Contributing
-
-Contributions, suggestions, and improvements are always welcome!
-
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/YourFeature`
-3. Commit your changes: `git commit -m 'Add YourFeature'`
-4. Push to the branch: `git push origin feature/YourFeature`
-5. Open a Pull Request
-
----
-
-<div align="center">
-  <sub>Built with ❤️ by the Dispensary Management Team</sub>
 </div>
