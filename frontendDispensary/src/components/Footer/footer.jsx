@@ -29,7 +29,15 @@ const Footer = () => {
                 <a href='https://www.chitkara.edu.in/marine/contact/' target='_blank'>Contact Us</a>
                 <a href='https://www.chitkara.edu.in/' target='_blank'>College Official Website</a>
 
-
+            <div className='footer-creators'>
+              <div className='footer-creators-heading'>Built by</div>
+              <ul>
+                <li><a href='https://github.com/Sarvan-Singh7' target='_blank' rel='noreferrer'>Sarvan Singh</a></li>
+                <li><a href='https://github.com/Dishu1871' target='_blank' rel='noreferrer'>Deepanshu</a></li>
+                <li><a href='https://github.com/Upandergarg' target='_blank' rel='noreferrer'>Upander Garg</a></li>
+                <li><a href='https://github.com/Death-Raider-2829' target='_blank' rel='noreferrer'>Simar Singh</a></li>
+              </ul>
+            </div>
       </div>
       <div className="footer-right">
           <div className="footer-right-name"> <CloudIcon/> Punjab, India</div>
